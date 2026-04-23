@@ -1,0 +1,327 @@
+/* ========================================
+    NAVBAR
+======================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #0B0B0B;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo-img {
+  height: 60px;
+  width: auto;
+  transition: transform var(--transition-base);
+}
+
+.navbar__logo:hover .navbar__logo-img {
+  transform: scale(1.05);
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Menu y Items */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__menu-item {
+  position: relative;
+}
+
+.navbar__link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-base);
+  padding: 0.5rem 0;
+}
+
+.navbar__link:hover {
+  color: #1DA1F2;
+}
+
+/* Submenu Toggle Button */
+.navbar__submenu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color var(--transition-base);
+}
+
+.navbar__submenu-toggle:hover {
+  color: #1DA1F2;
+}
+
+.navbar__submenu-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-base);
+}
+
+.navbar__submenu-toggle[aria-expanded="true"] .navbar__submenu-arrow {
+  transform: rotate(180deg);
+}
+
+/* Submenu Desktop */
+.navbar__submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1a1a1a;
+  border-radius: var(--radius-lg);
+  padding: 0.5rem 0;
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  list-style: none;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-base);
+  z-index: 1001;
+}
+
+.navbar__menu-item:hover .navbar__submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar__submenu-link {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.navbar__submenu-link:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+  color: #1DA1F2;
+}
+
+/* Botón WhatsApp Navbar */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  min-height: 44px;
+  background: var(--gradient-button);
+  background-size: 200% 200%;
+  border-radius: var(--radius-full);
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(29, 161, 242, 0.2);
+  animation: gradientShift 5s ease infinite;
+  white-space: nowrap;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.35), var(--glow-soft);
+  filter: brightness(1.1);
+}
+
+.icon-whatsapp {
+  width: 18px;
+  height: 18px;
+}
+
+/* Toggle Mobile */
+.navbar__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar__toggle-icon {
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: background-color var(--transition-base);
+}
+
+.navbar__toggle-icon::before,
+.navbar__toggle-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: transform var(--transition-base);
+}
+
+.navbar__toggle-icon::before {
+  top: -7px;
+}
+
+.navbar__toggle-icon::after {
+  top: 7px;
+}
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-icon {
+  background-color: transparent;
+}
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-icon::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-icon::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Desktop - Solo WhatsApp visible */
+@media (min-width: 768px) {
+  .navbar__toggle {
+    display: none;
+  }
+  
+  .navbar__menu {
+    display: none;
+  }
+}
+
+/* Mobile Nav */
+@media (max-width: 767px) {
+  .navbar__menu {
+    display: none;
+  }
+  
+  .navbar__nav {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0B0B0B;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    gap: 1rem;
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    overflow-y: auto;
+  }
+
+  .navbar__nav.is-open {
+    transform: translateX(0);
+  }
+
+  .navbar__nav .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    gap: 0.5rem;
+  }
+
+  .navbar__menu-item {
+    width: 100%;
+  }
+
+  .navbar__link,
+  .navbar__submenu-toggle {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1.125rem;
+    text-align: left;
+    justify-content: space-between;
+    border-radius: var(--radius-lg);
+  }
+
+  .navbar__link:hover,
+  .navbar__submenu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Submenu Mobile */
+  .navbar__submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background-color: transparent;
+    box-shadow: none;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    transition: max-height var(--transition-base), padding var(--transition-base);
+  }
+
+  .navbar__submenu.is-open {
+    max-height: 500px;
+    padding: 0.5rem 0;
+  }
+
+  .navbar__submenu-link {
+    padding: 0.75rem 1.25rem 0.75rem 2rem;
+    color: #b0b0b0;
+  }
+
+  .navbar__submenu-link:hover {
+    background-color: transparent;
+    color: #1DA1F2;
+  }
+
+  .btn-whatsapp {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    min-height: 52px;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
