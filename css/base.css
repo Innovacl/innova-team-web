@@ -331,6 +331,16 @@ section {
   padding: 0 1.5rem;
 }
 
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .section-title {
   font-family: var(--font-primary);
   font-size: clamp(1.75rem, 5vw, 2.5rem);
