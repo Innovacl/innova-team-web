@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Innova Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creamos páginas web modernas que hacen crecer tu negocio. Diseño profesional, rápido y enfocado en resultados.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+ 
+  <link rel="stylesheet" href="css/portafolio.css">
+  <link rel="stylesheet" href="css/footer.css">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+ <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="Inicio">
+        <img src="assets/innovasinfondo.png" alt="Innova Team Logo" class="navbar__logo-img">
+      </a>
+
+      <nav class="navbar__nav" id="navbarNav" aria-label="Navegación principal">
+        <ul class="navbar__menu">
+          <li class="navbar__menu-item">
+            <a href="#" class="navbar__link">Inicio</a>
+          </li>
+          <li class="navbar__menu-item navbar__menu-item--has-submenu">
+            <button class="navbar__submenu-toggle" aria-expanded="false" aria-label="Expandir servicios">
+              <span>Servicios</span>
+              <svg class="navbar__submenu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <ul class="navbar__submenu">
+              <li><a href="#apps" class="navbar__submenu-link">Apps móviles</a></li>
+              <li><a href="#web" class="navbar__submenu-link">Desarrollo web</a></li>
+              <li><a href="#tiendas" class="navbar__submenu-link">Tiendas virtuales</a></li>
+              <li><a href="#sistemas" class="navbar__submenu-link">Sistemas de software</a></li>
+              <li><a href="#soporte" class="navbar__submenu-link">Soporte online</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="https://wa.me/56977770556" class="btn-whatsapp" aria-label="Contactar por WhatsApp">
+          <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span class="whatsapp-text">WhatsApp</span>
+        </a>
+      </nav>
+
+      <button class="navbar__toggle" id="navbarToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbarNav">
+        <span class="navbar__toggle-icon"></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- Portafolio -->
+  <section class="portfolio" id="portafolio" aria-label="Nuestro portafolio">
+    <div class="container">
+      <h2 class="section-title">Portafolio</h2>
+      
+      <!-- Webs Corporativas -->
+      <div class="portfolio__category">
+        <h3 class="portfolio__category-title">Webs Corporativas</h3>
+        <div class="portfolio__grid">
+          <article class="card card--portfolio" aria-labelledby="project-2-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #f5576c 0%, #4c1d95 100%);">
+                <img src="assets/santacruz.png" alt="Sitio web colegio Santa Cruz">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="https://www.colegiosantacruz.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">Sitio Web Institucional</span>
+              <h3 class="card__title" id="project-2-title">Colegio Santa Cruz</h3>
+              <p class="card__text">Plataforma educativa integral que streamlinea procesos de admisión, comunicación padres-docentes y gestión académica.</p>
+            </div>
+          </article>
+
+          <article class="card card--portfolio" aria-labelledby="project-3-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #00E6A8 0%, #1DA1F2 100%);">
+                <img src="assets/santamonica.png" alt="Sitio web Santa Monica Chile">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="https://sm-em.com/" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">Sitio Web Corporativo</span>
+              <h3 class="card__title" id="project-3-title">Santa Monica Chile</h3>
+              <p class="card__text">Presencia digital estratégica con catálogo de productos que potencia la conversión y fortalece la marca.</p>
+            </div>
+          </article>
+
+          <article class="card card--portfolio" aria-labelledby="project-4-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">Sitio Web Corporativo</span>
+              <h3 class="card__title" id="project-4-title">Empresa de Servicios</h3>
+              <p class="card__text">Sitio profesional que genera confianza y facilita el contacto directo con potenciales clientes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Landing Pages -->
+      <div class="portfolio__category">
+        <h3 class="portfolio__category-title">Landing Pages</h3>
+        <div class="portfolio__grid">
+          <article class="card card--portfolio" aria-labelledby="project-1-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <img src="assets/gallardo.png" alt="Landing para negocio local">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="https://gallardopropiedades.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">Landing Page</span>
+              <h3 class="card__title" id="project-1-title">Propiedades Gallardo</h3>
+              <p class="card__text">Plataforma inmobiliaria diseñada para maximizar conversiones con filtros avanzados y experiencia de usuario optimizada.</p>
+            </div>
+          </article>
+
+          <article class="card card--portfolio" aria-labelledby="project-5-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">Landing Page</span>
+              <h3 class="card__title" id="project-5-title">Landing Captación WhatsApp</h3>
+              <p class="card__text">Página de alta conversión con integración directa a WhatsApp para capturar leads qualifiés de forma inmediata.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Apps -->
+      <div class="portfolio__category">
+        <h3 class="portfolio__category-title">Apps</h3>
+        <div class="portfolio__grid">
+          <article class="card card--portfolio" aria-labelledby="project-6-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">App Web Progresiva</span>
+              <h3 class="card__title" id="project-6-title">Sistema de Gestión</h3>
+              <p class="card__text">Solución integral para optimizar procesos operativos con control total de tareas, clientes y proyectos.</p>
+            </div>
+          </article>
+
+          <article class="card card--portfolio" aria-labelledby="project-7-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #C471ED 0%, #12C2E9 100%);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">App Web Progresiva</span>
+              <h3 class="card__title" id="project-7-title">Plataforma de Pedidos</h3>
+              <p class="card__text">Sistema digital que automatiza la toma de pedidos con tracking en tiempo real y control de inventario.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Ecommerce -->
+      <div class="portfolio__category">
+        <h3 class="portfolio__category-title">Ecommerce</h3>
+        <div class="portfolio__grid">
+          <article class="card card--portfolio" aria-labelledby="project-8-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #F7971E 0%, #FFD200 100%);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">Ecommerce</span>
+              <h3 class="card__title" id="project-8-title">Tienda de Frutas</h3>
+              <p class="card__text">Plataforma de e-commerce para productos frescos con sistema de pedidos y entrega a domicilio integrada.</p>
+            </div>
+          </article>
+
+          <article class="card card--portfolio" aria-labelledby="project-9-title">
+            <div class="card__image-wrapper">
+              <div class="card__image" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+              <div class="card__overlay" aria-hidden="true">
+                <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
+                  <span>Ver proyecto</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card__content">
+              <span class="card__type">Ecommerce</span>
+              <h3 class="card__title" id="project-9-title">Tienda de Ropa</h3>
+              <p class="card__text">Tienda online con pasarela de pagos segura, gestión de inventario y experiencia de compra optimizada.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="portfolio__cta-container">
+        <a href="proyectos.html" class="portfolio__cta-link">Ver todos los proyectos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      
+      <div class="footer__top">
+        <h2 class="footer__brand">Innova Team</h2>
+      </div>
+
+      <div class="footer__social">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer__social-link footer__social-link--instagram" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer__social-link footer__social-link--facebook" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer__rights">&copy; 2026 All Rights Reserved. Created by Innova Team</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>

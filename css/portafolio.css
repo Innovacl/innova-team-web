@@ -8,6 +8,15 @@
   background-color: var(--color-bg-secondary);
 }
 
+/* Título Portafolio con gradiente */
+.portfolio .section-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Grid Portfolio */
 .portfolio__grid {
   display: grid;
@@ -71,6 +80,48 @@
   .portfolio__grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Portfolio CTA Button */
+.portfolio__cta-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.portfolio__cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--gradient-button);
+  background-size: 200% 200%;
+  color: white;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), filter var(--transition-base);
+  animation: gradientShift 5s ease infinite;
+}
+
+.portfolio__cta-link:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4), var(--glow-soft);
+  filter: brightness(1.1);
+  background: var(--gradient-button-hover);
+}
+
+.portfolio__cta-link svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-base);
+}
+
+.portfolio__cta-link:hover svg {
+  transform: translateX(4px);
 }
 
 /* Portfolio Item */
@@ -264,7 +315,7 @@
   }
 }
 
-/* Animaciones entrada */
+/* Portfolio Item */
 @media (prefers-reduced-motion: no-preference) {
   .card--portfolio {
     opacity: 0;

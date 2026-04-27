@@ -1,81 +1,98 @@
 .about {
   display: none;
-  padding: 60px 0;
-  text-align: center;
 }
 
-.about .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Mobile Styles */
+/* Mobile Styles - ¿Quiénes Somos? */
 @media (max-width: 768px) {
   .about {
     display: block;
-    padding: 40px 20px;
-    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 60px 20px;
+    background-color: var(--color-bg);
   }
 
   .about .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 16px;
   }
 
-  .about h1,
-  .about h2,
-  .about h3 {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 16px;
+  .about h2 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+    font-weight: 800;
+    margin-bottom: 24px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    letter-spacing: -0.02em;
   }
 
   .about p {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-primary);
     font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 16px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    text-align: center;
   }
 
+  /* Card styling para el contenido principal */
+  .about > .container > div,
   .about .card,
   .about .feature,
   .about .info-box {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    background-color: var(--color-bg-card);
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
   }
 
+  /* Listas con estilo consistente */
   .about ul,
   .about ol {
-    background: #fff;
+    background-color: var(--color-bg-card);
     padding: 20px 20px 20px 40px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
   }
 
   .about li {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: var(--font-primary);
     font-size: 15px;
     line-height: 1.6;
-    color: #555;
-    margin-bottom: 10px;
+    color: var(--color-text-muted);
+    margin-bottom: 12px;
   }
 
+  .about li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Separador decorativo */
+  .about::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    margin: 0 auto 32px;
+  }
+
+  /* Links si los hay */
   .about a {
-    color: #007bff;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
+    transition: var(--transition-fast);
   }
 
   .about a:hover {
+    color: var(--color-accent);
     text-decoration: underline;
   }
 }
