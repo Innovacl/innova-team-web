@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/pricing.css">
   <link rel="stylesheet" href="css/portafolio.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/about.css">
@@ -170,10 +171,86 @@
     </div>
   </section>
 
+  <!-- Planes y Servicios -->
+  <section class="pricing" id="planes" aria-label="Planes y Servicios">
+    <div class="container">
+      <h2 class="section-title">Planes y Servicios</h2>
+      <p class="pricing__subtitle">Elige el plan ideal para tu negocio</p>
+      
+      <div class="pricing__grid">
+        <!-- Starter -->
+        <article class="pricing-card" aria-labelledby="plan-starter-title">
+          <h3 class="pricing-card__title" id="plan-starter-title">Starter</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount">150</span>
+            <span class="pricing-card__period">/proyecto</span>
+          </div>
+          <p class="pricing-card__description">Ideal para pequeños negocios que inician su presencia digital.</p>
+          <ul class="pricing-card__features">
+            <li>Landing Page básica</li>
+            <li>Diseño responsive</li>
+            <li>Formulario de contacto</li>
+            <li>Integración WhatsApp</li>
+            <li>Dominio (1 año)</li>
+            <li>Certificado SSL</li>
+          </ul>
+          <a href="https://wa.me/56977770556?text=Hola%2C%20quiero%20una%20landing%20page%20para%20mi%20negocio" class="pricing-card__button">Elegir Plan</a>
+        </article>
+
+        <!-- Pro -->
+        <article class="pricing-card pricing-card--featured" aria-labelledby="plan-pro-title">
+          <h3 class="pricing-card__title" id="plan-pro-title">Pro</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount">320</span>
+            <span class="pricing-card__period">/proyecto</span>
+          </div>
+          <p class="pricing-card__description">Perfecto para empresas que necesitan más funcionalidades.</p>
+          <ul class="pricing-card__features">
+            <li>Sitio web completo</li>
+            <li>Hasta 5 páginas</li>
+            <li>Blog integrado</li>
+            <li>Galería de imágenes</li>
+            <li>Optimización SEO</li>
+            <li>Dominio gratis (1 año)</li>
+            <li>Certificado SSL</li>
+          </ul>
+          <a href="https://wa.me/56977770556?text=Hola%2C%20quiero%20cotizar%20una%20web%20corporativa%20profesional" class="pricing-card__button">Elegir Plan</a>
+        </article>
+
+        <!-- Premium -->
+        <article class="pricing-card" aria-labelledby="plan-premium-title">
+          <h3 class="pricing-card__title" id="plan-premium-title">Premium</h3>
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount">580</span>
+            <span class="pricing-card__period">/proyecto</span>
+          </div>
+          <p class="pricing-card__description">Solución integral para negocios que buscan destacar.</p>
+          <ul class="pricing-card__features">
+            <li>Tienda virtual básica</li>
+            <li>Catálogo de productos</li>
+            <li>Pasarela de pagos</li>
+            <li>Panel de administración</li>
+            <li>Integración redes sociales</li>
+            <li>Dominio gratis (1 año)</li>
+            <li>Certificado SSL</li>
+            <li>Soporte 30 días</li>
+          </ul>
+          <a href="https://wa.me/56977770556?text=Hola%2C%20quiero%20desarrollar%20un%20ecommerce%20o%20aplicaci%C3%B3n%20web" class="pricing-card__button">Elegir Plan</a>
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
   <!-- Portafolio -->
   <section class="portfolio" id="portafolio" aria-label="Nuestro portafolio">
     <div class="container">
       <h2 class="section-title">Portafolio</h2>
+      
       <div class="portfolio__grid">
         <article class="card card--portfolio" aria-labelledby="project-1-title">
           <div class="card__image-wrapper">
@@ -253,8 +330,9 @@
           </div>
         </article>
       </div>
+     
       <div class="portfolio__cta-container">
-        <a href="#portafolio" class="portfolio__cta-link">Ver todos los proyectos</a>
+        <a href="proyectos.html" class="portfolio__cta-link">Ver todos los proyectos</a>
       </div>
     </div>
   </section>
