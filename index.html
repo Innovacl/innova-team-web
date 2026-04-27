@@ -5,12 +5,14 @@
   <title>Innova Team</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Creamos páginas web modernas que hacen crecer tu negocio. Diseño profesional, rápido y enfocado en resultados.">
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/portafolio.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/contact.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -24,7 +26,7 @@
   <header class="navbar" role="banner">
     <div class="navbar__container">
       <a href="#" class="navbar__logo" aria-label="Inicio">
-        <img src="assets/InnovaSinFondo.png" alt="Innova Team Logo" class="navbar__logo-img">
+        <img src="assets/innovasinfondo.png" alt="Innova Team Logo" class="navbar__logo-img">
       </a>
 
       <nav class="navbar__nav" id="navbarNav" aria-label="Navegación principal">
@@ -176,22 +178,24 @@
         <article class="card card--portfolio" aria-labelledby="project-1-title">
           <div class="card__image-wrapper">
             <div class="card__image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-               <img src="assets/gallardo.png" alt="Landing para negocio local">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder">
+              <img src="assets/gallardo.png" alt="Landing para negocio local">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                 <circle cx="8.5" cy="8.5" r="1.5"/>
                 <polyline points="21 15 16 10 5 21"/>
               </svg>
             </div>
             <div class="card__overlay" aria-hidden="true">
-              
-              <a href="https://gallardopropiedades.cl/" class="card__link">Ver proyecto</a>
-              
+              <a href="https://gallardopropiedades.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
+                <span>Ver proyecto</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
           </div>
           <div class="card__content">
             <span class="card__type">Landing Page</span>
-           
             <h3 class="card__title" id="project-1-title">Propiedades Gallardo</h3>
             <p class="card__text">Sitio web inmobiliario con búsqueda avanzada de propiedades y diseño moderno.</p>
           </div>
@@ -200,15 +204,20 @@
         <article class="card card--portfolio" aria-labelledby="project-2-title">
           <div class="card__image-wrapper">
             <div class="card__image" style="background: linear-gradient(135deg, #f5576c 0%, #4c1d95 100%);">
-              <img src="assets/santacruz.png" alt="Landing para negocio local">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder">
+              <img src="assets/santacruz.png" alt="Sitio web colegio Santa Cruz">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                 <circle cx="8.5" cy="8.5" r="1.5"/>
                 <polyline points="21 15 16 10 5 21"/>
               </svg>
             </div>
             <div class="card__overlay" aria-hidden="true">
-              <a href="https://www.colegiosantacruz.cl/" class="card__link">Ver proyecto</a>
+              <a href="https://www.colegiosantacruz.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
+                <span>Ver proyecto</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
           </div>
           <div class="card__content">
@@ -221,15 +230,20 @@
         <article class="card card--portfolio" aria-labelledby="project-3-title">
           <div class="card__image-wrapper">
             <div class="card__image" style="background: linear-gradient(135deg, #00E6A8 0%, #1DA1F2 100%);">
-              <img src="assets/santamonica.png" alt="Landing para negocio local">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder">
+              <img src="assets/santamonica.png" alt="Sitio web Santa Monica Chile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                 <circle cx="8.5" cy="8.5" r="1.5"/>
                 <polyline points="21 15 16 10 5 21"/>
               </svg>
             </div>
             <div class="card__overlay" aria-hidden="true">
-              <a href="https://sm-em.com/" class="card__link">Ver proyecto</a>
+              <a href="https://sm-em.com/" class="card__link" target="_blank" rel="noopener noreferrer">
+                <span>Ver proyecto</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
           </div>
           <div class="card__content">
@@ -255,65 +269,67 @@
   </section>
 
   <!-- Contacto -->
-  <section class="contacto" aria-label="Contacto">
+  <section class="contact" aria-label="Contacto">
     <div class="container">
-      <div class="contact__wrapper">
-        <h2 class="section-title">¿Tienes algún proyecto en mente? Hablemos!</h2>
-        
-        <p class="contact__description">Cuéntame tu idea para transformarla en una plataforma web y aplicación móvil de alto rendimiento. Rellena este formulario para solicitar un presupuesto y una estimación personalizada a tu proyecto.</p>
-        
-       <form name="contacto" method="POST" data-netlify="true" netlify>
-          <input type="hidden" name="form-name" value="contacto">
-          
-          <div class="contact__success" id="contactSuccess" style="display: none;">
-            <svg class="contact__success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <h3 class="contact__success-title">¡Mensaje enviado correctamente!</h3>
-            <p class="contact__success-text">Te contactaré pronto.</p>
-          </div>
-          
-          <div class="contact__grid" id="contactFormGrid">
-            <div class="contact__field">
-              <label for="nombre" class="contact__label">Nombre</label>
-              <input type="text" id="nombre" name="nombre" class="contact__input" placeholder="Tu nombre" required>
-            </div>
-            
-            <div class="contact__field">
-              <label for="apellido" class="contact__label">Apellido</label>
-              <input type="text" id="apellido" name="apellido" class="contact__input" placeholder="Tu apellido" required>
-            </div>
-            
-            <div class="contact__field">
-              <label for="email" class="contact__label">Correo electrónico</label>
-              <input type="email" id="email" name="email" class="contact__input" placeholder="tu@email.com" required>
-            </div>
-            
-            <div class="contact__field">
-              <label for="telefono" class="contact__label">Número de teléfono</label>
-              <input type="tel" id="telefono" name="telefono" class="contact__input" placeholder="+56 9 1234 5678">
-            </div>
-          </div>
-          
-          <div class="contact__field contact__field--full">
-            <label for="mensaje" class="contact__label">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" class="contact__textarea" placeholder="Cuéntame sobre tu proyecto..." rows="5" required></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn--primary contact__button">
-            <span class="btn__shine" aria-hidden="true"></span>
-            <span class="btn__text">Enviar mensaje</span>
-            <span class="btn__icon" aria-hidden="true">→</span>
-          </button>
-        </form>
-        
-        <div class="contact__email">
-          <svg class="contact__email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <a href="mailto:innova1team@gmail.com">innova1team@gmail.com</a>
-        </div>
-      </div>
+       <div class="contact__wrapper">
+         <h2 class="section-title">¿Tienes algún proyecto en mente? Hablemos!</h2>
+         
+         <p class="contact__description">Cuéntame tu idea para transformarla en una plataforma web y aplicación móvil de alto rendimiento. Rellena este formulario para solicitar un presupuesto y una estimación personalizada a tu proyecto.</p>
+         
+        <form name="contacto" method="POST" data-netlify="true" netlify>
+           <input type="hidden" name="form-name" value="contacto">
+           
+           <div class="contact__success" id="contactSuccess" style="display: none;">
+             <svg class="contact__success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+               <polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round"/>
+             </svg>
+             <h3 class="contact__success-title">¡Mensaje enviado correctamente!</h3>
+             <p class="contact__success-text">Te contactaré pronto.</p>
+           </div>
+           
+           <div class="contact__grid" id="contactFormGrid">
+             <div class="contact__field">
+               <label for="nombre" class="contact__label">Nombre</label>
+               <input type="text" id="nombre" name="nombre" class="contact__input" placeholder="Tu nombre" required>
+             </div>
+             
+             <div class="contact__field">
+               <label for="apellido" class="contact__label">Apellido</label>
+               <input type="text" id="apellido" name="apellido" class="contact__input" placeholder="Tu apellido" required>
+             </div>
+             
+             <div class="contact__field">
+               <label for="email" class="contact__label">Correo electrónico</label>
+               <input type="email" id="email" name="email" class="contact__input" placeholder="tu@email.com" required>
+             </div>
+             
+             <div class="contact__field">
+               <label for="telefono" class="contact__label">Número de teléfono</label>
+               <input type="tel" id="telefono" name="telefono" class="contact__input" placeholder="+56 9 1234 5678">
+             </div>
+             
+             <div class="contact__field contact__field--full">
+               <label for="mensaje" class="contact__label">Mensaje</label>
+               <textarea id="mensaje" name="mensaje" class="contact__textarea" placeholder="Cuéntame sobre tu proyecto..." rows="5" required></textarea>
+             </div>
+             
+             <div class="contact__field contact__field--full contact__field--button">
+               <button type="submit" class="btn btn--primary contact__button">
+                 <span class="btn__shine" aria-hidden="true"></span>
+                 <span class="btn__text">Enviar mensaje</span>
+                 <span class="btn__icon" aria-hidden="true">→</span>
+               </button>
+             </div>
+           </div>
+         </form>
+         
+         <div class="contact__email">
+           <svg class="contact__email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+             <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linecap="round" stroke-linejoin="round"/>
+           </svg>
+           <a href="mailto:innova1team@gmail.com">innova1team@gmail.com</a>
+         </div>
+       </div>
     </div>
   </section>
 
