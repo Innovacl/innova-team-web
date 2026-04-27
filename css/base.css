@@ -332,12 +332,125 @@ section {
 }
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE GLOBAL - MOBILE FIRST
    ======================================== */
 @media (max-width: 768px) {
+  /* Mejoras de legibilidad en mobile */
+  body {
+    font-size: 0.9375rem; /* 15px base */
+    line-height: 1.65;
+  }
+
+  /* Contenedor responsivo */
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  /* Ajustar márgenes entre secciones */
+  section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  /* Títulos de sección más legibles */
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 2.5rem;
+    line-height: 1.25;
+  }
+
+  /* Párrafos con mejor spacing */
+  p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  /* ========================================
+     BOTONES - Tamaño táctil mínimo 44px
+     ======================================== */
+  .btn {
+    min-height: 48px;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .btn--primary,
+  .btn--secondary {
+    min-height: 48px;
+  }
+
+  /* Botones de enlace en cards */
+  .card__link {
+    min-height: 44px;
+    padding: 0.625rem 1.25rem;
+  }
+
+  /* Botón de contacto */
+  .contact__button {
+    min-height: 48px;
+  }
+
+  /* ========================================
+     MEJORAS ADICIONALES DE TOQUE
+     ======================================== */
+  
+  /* Inputs táctiles */
+  .contact__input,
+  .contact__textarea {
+    min-height: 48px;
+    font-size: 1rem; /* Evita zoom en iOS */
+  }
+
+  /* Links con área táctil adecuada */
+  a,
+  .contact__email a {
+    min-height: 44px;
+    padding: 0.25rem 0;
+  }
+
+  /* Badges táctiles */
+  .hero__badge,
+  .card__type {
+    padding: 0.375rem 0.875rem;
+  }
+
+  /* ========================================
+     MEJORAS DE SPACING
+     ======================================== */
+  
+  /* Reducir spacing en hero */
+  .hero {
+    padding: 5rem 1rem 3rem;
+  }
+
+  /* Ajustar servicios */
+  .services {
+    padding: 3.5rem 1rem 3rem;
+  }
+
+  .services__grid {
+    gap: 1.25rem;
+  }
+
+  /* Ajustar portafolio */
+  .portfolio {
+    padding: 3rem 1rem;
+  }
+
+  .portfolio__grid {
+    gap: 1.25rem;
+  }
+
+  /* Ajustar contacto */
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .contact__description {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
   }
 }
 

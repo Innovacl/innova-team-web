@@ -168,6 +168,50 @@
   margin: 0 auto;
 }
 
+/* Mobile: 1 columna con padding y gap ajustados */
+@media (max-width: 768px) {
+  .services {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .services__grid {
+    gap: 1.25rem;
+  }
+
+  .card--service {
+    padding: 1.75rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .card--service .card__icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.25rem;
+  }
+
+  .card--service .card__icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .card--service .card__title {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card--service .card__description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .services .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+  }
+}
+
 @media (min-width: 480px) {
   .services__grid {
     grid-template-columns: repeat(2, 1fr);

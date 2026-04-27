@@ -289,3 +289,56 @@
     padding: 2rem;
   }
 }
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1rem;
+    overflow-x: hidden;
+  }
+  
+  .contact__wrapper {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .contact__grid {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  
+  .contact__field {
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact__input,
+  .contact__textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.875rem 0.875rem;
+  }
+  
+  .contact__textarea {
+    min-height: 120px;
+  }
+  
+  .contact__button {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0.75rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .contact__email {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+  }
+  
+  .contact__description {
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

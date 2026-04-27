@@ -12,6 +12,91 @@
   background: linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 50%, #0a0a0a 100%);
 }
 
+@media (max-width: 768px) {
+  /* Reducir padding vertical */
+  .hero {
+    padding: 5rem 1rem 3rem;
+    min-height: auto;
+    min-height: 100dvh;
+  }
+  
+  /* Reducir tamaño del título */
+  .hero__title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Reducir tamaño de descripción */
+  .hero__description {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  /* Badge más pequeño */
+  .hero__badge {
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.75rem;
+  }
+  
+  /* Botones en columna, centrados */
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero__buttons .btn {
+    width: 100%;
+    max-width: 260px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Stats más compactas */
+  .hero__stats {
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+  }
+  
+  .hero__stat-number {
+    font-size: 1.25rem;
+  }
+  
+  .hero__stat-label {
+    font-size: 0.6875rem;
+  }
+  
+  /* Reducir orbes decorativos para evitar overflow */
+  .hero__glow--1 {
+    width: 150px;
+    height: 150px;
+    top: 5%;
+    left: -25%;
+  }
+  
+  .hero__glow--2 {
+    width: 120px;
+    height: 120px;
+    bottom: 15%;
+    right: -20%;
+  }
+  
+  .hero__glow--3 {
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    right: -5%;
+  }
+  
+  .hero__glow {
+    opacity: 0.3;
+  }
+}
+
 @media (min-width: 768px) {
   .hero {
     padding: 8rem 2rem 5rem;
