@@ -1,0 +1,81 @@
+.about {
+  display: none;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .about {
+    display: block;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+  }
+
+  .about .container {
+    padding: 0 16px;
+  }
+
+  .about h1,
+  .about h2,
+  .about h3 {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+  }
+
+  .about p {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 16px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .about .card,
+  .about .feature,
+  .about .info-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .about ul,
+  .about ol {
+    background: #fff;
+    padding: 20px 20px 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .about li {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  .about a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .about a:hover {
+    text-decoration: underline;
+  }
+}
