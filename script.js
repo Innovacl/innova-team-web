@@ -87,4 +87,44 @@
       }, 1500);
     });
   }
+
+  /**
+   * Portfolio Filter
+   */
+  (function() {
+    'use strict';
+
+    const filterButtons = document.querySelectorAll('.portfolio__filter-btn');
+    const portfolioCards = document.querySelectorAll('.card--portfolio');
+
+    if (!filterButtons.length || !portfolioCards.length) return;
+
+    filterButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+
+        // Actualizar estado activo del botón
+        filterButtons.forEach(function(btn) {
+          btn.classList.remove('portfolio__filter-btn--active');
+        });
+        this.classList.add('portfolio__filter-btn--active');
+
+        // Filtrar proyectos
+        portfolioCards.forEach(function(card) {
+          const category = card.getAttribute('data-category');
+
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+            // Añadir animación de fade in
+            card.style.opacity = '0';
+            setTimeout(function() {
+              card.style.opacity = '1';
+            }, 50);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
 })();

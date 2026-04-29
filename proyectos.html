@@ -74,12 +74,20 @@
     <div class="container">
       <h2 class="section-title">Portafolio</h2>
       
+      <!-- Filtros -->
+      <div class="portfolio__filters">
+        <button class="portfolio__filter-btn portfolio__filter-btn--active" data-filter="all">Todos</button>
+        <button class="portfolio__filter-btn" data-filter="negocios">Negocios</button>
+        <button class="portfolio__filter-btn" data-filter="servicios">Servicios</button>
+        <button class="portfolio__filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="portfolio__filter-btn" data-filter="marca">Marca personal</button>
+      </div>
       
       <!-- Webs Corporativas -->
       <div class="portfolio__category">
         <h3 class="portfolio__category-title">Webs Corporativas</h3>
         <div class="portfolio__grid">
-          <article class="card card--portfolio" aria-labelledby="project-2-title">
+<article class="card card--portfolio" data-category="negocios" aria-labelledby="project-2-title">
             <div class="card__image-wrapper">
               <div class="card__image" style="background: linear-gradient(135deg, #f5576c 0%, #4c1d95 100%);">
                 <img src="assets/santacruz.png" alt="Sitio web colegio Santa Cruz">
@@ -101,11 +109,11 @@
             <div class="card__content">
               <span class="card__type">Sitio Web Institucional</span>
               <h3 class="card__title" id="project-2-title">Colegio Santa Cruz</h3>
-              <p class="card__text">Plataforma educativa integral que streamlinea procesos de admisión, comunicación padres-docentes y gestión académica.</p>
+              <p class="card__text">Sitio web para colegio que facilita la admisión online y mantiene informados a los padres.</p>
             </div>
           </article>
 
-          <article class="card card--portfolio" aria-labelledby="project-3-title">
+<article class="card card--portfolio" data-category="negocios" aria-labelledby="project-3-title">
             <div class="card__image-wrapper">
               <div class="card__image" style="background: linear-gradient(135deg, #00E6A8 0%, #1DA1F2 100%);">
                 <img src="assets/santamonica.png" alt="Sitio web Santa Monica Chile">
@@ -127,7 +135,7 @@
             <div class="card__content">
               <span class="card__type">Sitio Web Corporativo</span>
               <h3 class="card__title" id="project-3-title">Santa Monica Chile</h3>
-              <p class="card__text">Presencia digital estratégica con catálogo de productos que potencia la conversión y fortalece la marca.</p>
+              <p class="card__text">Catálogo digital para imprenta que muestra servicios y facilita cotizaciones.</p>
             </div>
           </article>
 
@@ -149,7 +157,7 @@
       <div class="portfolio__category">
         <h3 class="portfolio__category-title">Landing Pages</h3>
         <div class="portfolio__grid">
-          <article class="card card--portfolio" aria-labelledby="project-1-title">
+<article class="card card--portfolio" data-category="negocios" aria-labelledby="project-1-title">
             <div class="card__image-wrapper">
               <div class="card__image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
                 <img src="assets/gallardo.png" alt="Landing para negocio local">
@@ -171,11 +179,11 @@
             <div class="card__content">
               <span class="card__type">Landing Page</span>
               <h3 class="card__title" id="project-1-title">Propiedades Gallardo</h3>
-              <p class="card__text">Plataforma inmobiliaria diseñada para maximizar conversiones con filtros avanzados y experiencia de usuario optimizada.</p>
+              <p class="card__text">Landing para corredora de propiedades enfocada en generar contactos de clientes interesados.</p>
             </div>
           </article>
 
-          <article class="card card--portfolio" aria-labelledby="project-5-title">
+<article class="card card--portfolio" data-category="negocios" aria-labelledby="project-5-title">
             <div class="card__image-wrapper">
               <div class="card__image" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
                <img src="assets/haus.png" alt="Landing para negocio local">
@@ -197,7 +205,7 @@
             <div class="card__content">
               <span class="card__type">Pagina Web</span>
               <h3 class="card__title" id="project-5-title">HausBau.Cl</h3>
-              <p class="card__text">Plataforma diseñada para la Compra Venta y Arriendo de Propiedades</p>
+              <p class="card__text">Portal inmobiliario para compradores y arrendatarios que buscan propiedades.</p>
             </div>
           </article>
 
@@ -217,7 +225,7 @@
       <div class="portfolio__category">
         <h3 class="portfolio__category-title">Apps</h3>
         <div class="portfolio__grid">
-          <article class="card card--portfolio" aria-labelledby="project-6-title">
+<article class="card card--portfolio" data-category="servicios" aria-labelledby="project-6-title">
             <div class="card__image-wrapper">
               <div class="card__image" style="background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
@@ -238,11 +246,11 @@
             <div class="card__content">
               <span class="card__type">App Web Progresiva</span>
               <h3 class="card__title" id="project-6-title">Sistema de Gestión</h3>
-              <p class="card__text">Solución integral para optimizar procesos operativos con control total de tareas, clientes y proyectos.</p>
+              <p class="card__text">Sistema para talleres y negocios de servicios que organiza clientes, pedidos y tareas.</p>
             </div>
           </article>
 
-          <article class="card card--portfolio" aria-labelledby="project-7-title">
+<article class="card card--portfolio" data-category="servicios" aria-labelledby="project-7-title">
             <div class="card__image-wrapper">
               <div class="card__image" style="background: linear-gradient(135deg, #C471ED 0%, #12C2E9 100%);">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
@@ -263,7 +271,7 @@
             <div class="card__content">
               <span class="card__type">App Web Progresiva</span>
               <h3 class="card__title" id="project-7-title">Plataforma de Pedidos</h3>
-              <p class="card__text">Sistema digital que automatiza la toma de pedidos con tracking en tiempo real y control de inventario.</p>
+              <p class="card__text">App para restaurants y tiendas que recibe pedidos por WhatsApp y controla inventario.</p>
             </div>
           </article>
 
@@ -283,7 +291,7 @@
       <div class="portfolio__category">
         <h3 class="portfolio__category-title">Ecommerce</h3>
         <div class="portfolio__grid">
-          <article class="card card--portfolio" aria-labelledby="project-8-title">
+<article class="card card--portfolio" data-category="ecommerce" aria-labelledby="project-8-title">
             <div class="card__image-wrapper">
               <div class="card__image" style="background: linear-gradient(135deg, #F7971E 0%, #FFD200 100%);">
                 <img src="assets/led.png" alt="Landing para negocio local">
@@ -305,11 +313,11 @@
             <div class="card__content">
               <span class="card__type">Ecommerce</span>
               <h3 class="card__title" id="project-8-title">Tienda de Modulos LED</h3>
-              <p class="card__text">Plataforma de tecnología e innovación para eventos y luces led.</p>
+              <p class="card__text">Tienda online para organizadores de eventos que arriendan equipos LED e iluminación.</p>
             </div>
           </article>
 
-          <article class="card card--portfolio" aria-labelledby="project-9-title">
+<article class="card card--portfolio" data-category="ecommerce" aria-labelledby="project-9-title">
             <div class="card__image-wrapper">
               <div class="card__image" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);">
               <img src="assets/ropa.png" alt="Landing para negocio local">
@@ -331,7 +339,7 @@
             <div class="card__content">
               <span class="card__type">Tienda Virtual</span>
               <h3 class="card__title" id="project-9-title">Street Machine Chile</h3>
-              <p class="card__text">Tienda urbana de ropa, zapatillas y accesorios</p>
+              <p class="card__text">Tienda online de ropa urbana para jóvenes que buscan zapatillas y accesorios de moda.</p>
             </div>
           </article>
 
