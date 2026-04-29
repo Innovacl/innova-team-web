@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/services.css">
   <link rel="stylesheet" href="css/pricing.css">
   <link rel="stylesheet" href="css/portafolio.css">
@@ -16,7 +17,8 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   
   <script src="script.js" defer></script>
@@ -73,20 +75,53 @@
     <div class="hero__glow hero__glow--3" aria-hidden="true"></div>
     <div class="hero__content">
       
-     <!-- <div class="hero__badge">
-       <span class="hero__badge-dot" aria-hidden="true"></span>
-            <span class="hero__badge-text"> < Desarrollamos Tu Idea /></span> 
-      </div> -->
+     <!-- Badge con identidad técnica -->
+    <div class="hero__badge">
+      <span class="hero__badge-dot" aria-hidden="true"></span>
+      <span class="hero__badge-text">&lt; Desarrollamos tu idea /&gt;</span>
+    </div>
 
       <h1 class="hero__title">
         <span class="hero__title--white">Impulsa tu negocio con una</span> <span class="hero__title--highlight">Plataforma Digital</span>
       </h1>
+      <p class="hero__location">
+  <!--<span>🇨🇱</span> Chile &nbsp;&amp;&nbsp; <span>🇻🇪 Venezuela</span>
+</p>-->
 
-      <p class="hero__description">
-        Diseñamos experiencias digitales que convierten visitantes en clientes. 
-        Resultados reales: hasta <strong>3x más ventas</strong> en los primeros 3 meses.
-      </p>
-
+      <p class="hero__description">Diseñamos experiencias digitales que convierten visitantes en clientes.</p>
+<!-- Terminal — va antes de los botones -->
+<div class="hero__terminal" role="img" aria-label="Demostración animada del proceso de desarrollo">
+  <div class="hero__terminal-bar">
+    <span class="terminal-dot terminal-dot--red"></span>
+    <span class="terminal-dot terminal-dot--yellow"></span>
+    <span class="terminal-dot terminal-dot--green"></span>
+    <span class="terminal-title">Innova-Team ~ Proyecto-cliente</span>
+  </div>
+  <div class="hero__terminal-body" aria-hidden="true">
+    <div class="t-line">
+      <span class="t-prompt">›</span>
+      <span class="t-cmd">crear</span>
+      <span class="t-str">"mi-negocio"</span>
+      <span class="t-muted">--tipo</span>
+      <span class="t-num">ecommerce</span>
+    </div>
+    <div class="t-line">
+      <span class="t-prompt">›</span>
+      <span class="t-cmd">configurar</span>
+      <span class="t-muted">--seo</span>
+      <span class="t-num">true</span>
+      <span class="t-muted">--pagos</span>
+      <span class="t-num">true</span>
+    </div>
+    <div class="t-output">⚙ Diseñando experiencia de usuario...</div>
+    <div class="t-output">⚙ Integrando pasarela de pagos...</div>
+    <div class="t-success">✓ Tu sitio está generando ventas 🚀</div>
+    <div class="t-line">
+      <span class="t-prompt">›</span>
+      <span class="t-cursor"></span>
+    </div>
+  </div>
+</div> 
       <div class="hero__buttons">
         <a href="https://wa.me/56977770556" class="btn btn--primary" aria-label="Cotizar por WhatsApp">
           <span class="btn__shine" aria-hidden="true"></span>
@@ -290,6 +325,8 @@
 
   <!-- Ecosistema -->
 <!-- section class="ecosystem" aria-label="Ecosistema">
+
+
     <div class="container">
       <h2 class="section-title">Nuestro Ecosistema</h2>
       <div class="ecosystem-container">
@@ -338,6 +375,9 @@
   </section>
 
   <!-- Portafolio -->
+ 
+ 
+ 
   <section class="portfolio" id="portafolio" aria-label="Nuestro portafolio">
     <div class="container">
       <h2 class="section-title">Nuestro Portafolio</h2>
@@ -577,6 +617,193 @@
       <p>&copy; 2026 Innova Team. Todos los derechos reservados.</p>
     </div>
   </footer>
+<!-- ── Burbuja flotante ── -->
+<div class="chat-bubble">
+  <div class="chat-bubble__tooltip" id="chatTooltip" onclick="toggleChat()">
+    <p>👋 ¡Hola! ¿Necesitas una <strong>web o app</strong> para tu negocio?</p>
+  </div>
+  <button class="chat-bubble__btn" id="chatBtn" onclick="toggleChat()" aria-label="Abrir chat">
+    <span class="chat-bubble__dot"></span>
+    <!-- Icono chat -->
+    <svg class="icon-chat" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+    </svg>
+    <!-- Icono cerrar -->
+    <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+</div>
 
+<!-- ── Ventana del chat ── -->
+<div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat de soporte Innova Team">
+  <div class="chat-window__header">
+    <div class="chat-header__avatar">💻</div>
+    <div class="chat-header__info">
+      <p class="chat-header__name">Innova Team</p>
+      <p class="chat-header__status">En línea ahora</p>
+    </div>
+  </div>
+
+  <div class="chat-window__messages" id="chatMessages"></div>
+
+  <div class="chat-options" id="chatOptions"></div>
+
+  <div class="chat-window__footer">
+    <a id="waBtn" href="https://wa.me/56977770556?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" 
+       class="chat-wa-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.836L.057 23.625a.75.75 0 00.92.92l5.789-1.467A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.715 9.715 0 01-4.964-1.363l-.355-.211-3.686.935.951-3.585-.232-.369A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+      </svg>
+      Continuar en WhatsApp
+    </a>
+  </div>
+</div>
+
+<script>
+  // ── Configuración ──
+  const WA_NUMBER = '56977770556';
+  const AGENT_NAME = 'Innova Team';
+
+  const flows = {
+    start: {
+      msg: '¡Hola! 👋 Soy el asistente de Innova Team. ¿En qué puedo ayudarte hoy?',
+      options: [
+        { label: '🌐 Quiero una Página web',    next: 'web' },
+        { label: '🛒 Quiero una Tienda online', next: 'tienda' },
+        { label: '📱 Quiero una App móvil',     next: 'app' },
+        { label: '⚙️ Quiero un Sistema de Software', next: 'software' },
+      ]
+    },
+    web: {
+      msg: '¡Genial! Una web profesional es el primer paso  ¿Qué tipo de negocio tienes?',
+      options: [
+        { label: '🏢 Empresa / Servicios', next: 'cotizar' },
+        { label: '🏫 Colegio / Institución', next: 'cotizar' },
+        { label: '🏠 Inmobiliaria',         next: 'cotizar' },
+        { label: '🍽 Restaurante / Local',   next: 'cotizar' },
+      ]
+    },
+    tienda: {
+      msg: '¡Perfecto! Con tu tienda online vendes las 24 horas 🛒 ¿Cuántos productos tienes aproximadamente?',
+      options: [
+        { label: 'Menos de 50',    next: 'cotizar' },
+        { label: 'Entre 50-200',   next: 'cotizar' },
+        { label: 'Más de 200',     next: 'cotizar' },
+      ]
+    },
+    app: {
+      msg: '¡Las apps abren un mundo de posibilidades! 📱 ¿Para qué plataforma la necesitas?',
+      options: [
+        { label: '🍎 Solo iOS',         next: 'cotizar' },
+        { label: '🤖 Solo Android',     next: 'cotizar' },
+        { label: '📲 iOS y Android',    next: 'cotizar' },
+      ]
+    },
+    software: {
+  msg: '¡Perfecto! Un sistema a medida centraliza tu negocio 🖥️ ¿Qué necesitas gestionar?',
+  options: [
+    { label: '📦 Inventario / Ventas',     next: 'cotizar' },
+    { label: '👥 Clientes / CRM',          next: 'cotizar' },
+    { label: '📊 Reportes / Dashboard',    next: 'cotizar' },
+    { label: '🔧 Algo más específico',     next: 'cotizar' },
+  ]
+},
+    cotizar: {
+      msg: '¡Excelente! 🎉 Te conectaré con nuestro equipo ahora mismo. Haz clic en el botón de abajo para continuar por WhatsApp.',
+      options: []
+    }
+  };
+
+  let chatOpen = false;
+  let started = false;
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    const win = document.getElementById('chatWindow');
+    const btn = document.getElementById('chatBtn');
+    const tooltip = document.getElementById('chatTooltip');
+
+    win.classList.toggle('is-open', chatOpen);
+    btn.classList.toggle('is-open', chatOpen);
+
+    if (chatOpen) {
+      tooltip.style.display = 'none';
+      if (!started) { started = true; startFlow('start'); }
+    }
+  }
+
+  function getTime() {
+    return new Date().toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function addMessage(text, type = 'bot', delay = 0) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        const msgs = document.getElementById('chatMessages');
+
+        if (type === 'bot') {
+          // typing indicator
+          const typing = document.createElement('div');
+          typing.className = 'typing';
+          typing.innerHTML = '<span></span><span></span><span></span>';
+          msgs.appendChild(typing);
+          msgs.scrollTop = msgs.scrollHeight;
+
+          setTimeout(() => {
+            typing.remove();
+            const el = document.createElement('div');
+            el.className = 'msg msg--bot';
+            el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
+            msgs.appendChild(el);
+            msgs.scrollTop = msgs.scrollHeight;
+            resolve();
+          }, 900);
+        } else {
+          const el = document.createElement('div');
+          el.className = 'msg msg--user';
+          el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
+          msgs.appendChild(el);
+          msgs.scrollTop = msgs.scrollHeight;
+          resolve();
+        }
+      }, delay);
+    });
+  }
+
+  function showOptions(options) {
+    const container = document.getElementById('chatOptions');
+    container.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'chat-option';
+      btn.textContent = opt.label;
+      btn.onclick = () => selectOption(opt);
+      container.appendChild(btn);
+    });
+  }
+
+  async function startFlow(key) {
+    const step = flows[key];
+    if (!step) return;
+
+    // Actualizar botón WhatsApp con contexto si es cotizar
+    if (key === 'cotizar') {
+      const waBtn = document.getElementById('waBtn');
+      waBtn.href = `https://wa.me/${WA_NUMBER}?text=Hola%2C%20vengo%20del%20chat%20de%20su%20web%20y%20quiero%20cotizar%20un%20proyecto`;
+    }
+
+    showOptions([]);
+    await addMessage(step.msg, 'bot', 300);
+    if (step.options.length > 0) showOptions(step.options);
+  }
+
+  async function selectOption(opt) {
+    showOptions([]);
+    await addMessage(opt.label, 'user');
+    await startFlow(opt.next);
+  }
+</script>
 </body>
 </html>
