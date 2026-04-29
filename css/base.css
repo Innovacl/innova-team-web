@@ -166,6 +166,16 @@ textarea {
   }
 }
 
+/* Keyframes float para elementos del ecosystem */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 /* ========================================
    CLASES DE ANIMACIÓN
    ======================================== */
@@ -560,4 +570,184 @@ section {
 
 .btn:hover .btn__shine {
   left: 100%;
+}
+
+/* ========================================
+   ECOSYSTEM - Distribución Circular
+   ======================================== */
+
+.ecosystem {
+  padding: 5rem 1rem;
+}
+
+.ecosystem-container {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  margin: 0 auto;
+}
+
+.ecosystem-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ecosystem-center {
+  animation: pulse 4s ease-in-out infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+.ecosystem-center img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.ecosystem-item {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecosystem-item img {
+  filter: none;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  animation: float-vertical 3s ease-in-out infinite;
+  
+}
+
+/* Posicionamiento de cada item - manteniendo solo animación base float */
+.ecosystem-item.item-1 {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ecosystem-item.item-1 img {
+  animation-delay: 0s;
+}
+
+.ecosystem-item.item-2 {
+  top: 70px;
+  right: 55px;
+}
+
+.ecosystem-item.item-2 img {
+  animation-delay: 0.3s;
+}
+
+.ecosystem-item.item-3 {
+  bottom: 70px;
+  right: 55px;
+}
+
+.ecosystem-item.item-3 img {
+  animation-delay: 0.6s;
+}
+
+.ecosystem-item.item-4 {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ecosystem-item.item-4 img {
+  animation-delay: 0.9s;
+}
+
+.ecosystem-item.item-5 {
+  bottom: 70px;
+  left: 55px;
+}
+
+.ecosystem-item.item-5 img {
+  animation-delay: 1.2s;
+}
+
+.ecosystem-item.item-6 {
+  top: 70px;
+  left: 55px;
+}
+
+.ecosystem-item.item-6 img {
+  animation-delay: 1.5s;
+}
+
+/* Animación de aparición para líneas SVG */
+.ecosystem-lines line {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  stroke-opacity: 0.6;
+  filter: drop-shadow(0 0 4px var(--color-accent));
+  animation: 
+    line-draw 2.5s ease-out forwards,
+    line-glow 4s ease-in-out infinite;
+}
+
+.ecosystem-lines line:nth-child(1) { 
+  animation-delay: 0.1s, 0s; 
+}
+.ecosystem-lines line:nth-child(2) { 
+  animation-delay: 0.2s, 0.2s; 
+}
+.ecosystem-lines line:nth-child(3) { 
+  animation-delay: 0.4s, 0.4s; 
+}
+.ecosystem-lines line:nth-child(4) { 
+  animation-delay: 0.4s, 0.6s; 
+}
+.ecosystem-lines line:nth-child(5) { 
+  animation-delay: 0.8s, 0.8s; 
+}
+.ecosystem-lines line:nth-child(6) { 
+  animation-delay: 1s, 1s; 
+}
+
+@keyframes line-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Animación de glow pulsante para líneas SVG */
+@keyframes line-glow {
+  0%, 100% {
+    stroke-opacity: 0.4;
+    filter: drop-shadow(0 0 2px var(--color-accent));
+  }
+  50% {
+    stroke-opacity: 1;
+    filter: drop-shadow(0 0 8px var(--color-accent)) drop-shadow(0 0 12px var(--color-accent));
+  }
+}
+
+/* Keyframe específico para ecosystem - solo translateY para no sobrescribir transform del posicionamiento */
+@keyframes float-vertical {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
