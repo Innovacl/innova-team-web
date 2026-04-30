@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nosotros - Innova Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce más sobre Innova Team. Nuestro equipo de expertos en desarrollo web, apps móviles y soluciones digitales.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/pricing.css">
+  <link rel="stylesheet" href="css/portafolio.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="Inicio">
+        <img src="assets/innovasinfondo.png" alt="Innova Team Logo" class="navbar__logo-img">
+      </a>
+
+      <nav class="navbar__nav" id="navbarNav" aria-label="Navegación principal">
+        <ul class="navbar__menu">
+          <li class="navbar__menu-item">
+            <a href="index.html" class="navbar__link">Inicio</a>
+          </li>
+          <li class="navbar__menu-item navbar__menu-item--has-submenu">
+            <button class="navbar__submenu-toggle" aria-expanded="false" aria-label="Expandir servicios">
+              <span>Servicios</span>
+              <svg class="navbar__submenu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <ul class="navbar__submenu">
+              <li><a href="index.html" class="navbar__submenu-link">Apps móviles</a></li>
+              <li><a href="index.html" class="navbar__submenu-link">Desarrollo web</a></li>
+              <li><a href="index.html" class="navbar__submenu-link">Tiendas virtuales</a></li>
+              <li><a href="index.html" class="navbar__submenu-link">Sistemas de software</a></li>
+              <li><a href="index.html" class="navbar__submenu-link">Soporte online</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="https://wa.me/569777770556?text=Hola,%20me%20gustaria%20cotizar%20una%20pagina%20web" class="btn-whatsapp" aria-label="Contactar por WhatsApp">
+          <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span class="whatsapp-text">WhatsApp</span>
+        </a>
+      </nav>
+
+      <button class="navbar__toggle" id="navbarToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbarNav">
+        <span class="navbar__toggle-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Contenido Principal - ¿Quiénes Somos? -->
+<main>
+ 
+  <!-- ── Hero Nosotros ── -->
+  <section class="about-hero" aria-label="Quiénes somos">
+    <div class="about-hero__glow about-hero__glow--1" aria-hidden="true"></div>
+    <div class="about-hero__glow about-hero__glow--2" aria-hidden="true"></div>
+    <div class="about-hero__content">
+      <div class="about-badge">
+        <span class="about-badge__dot" aria-hidden="true"></span>
+        &lt; nuestro equipo /&gt;
+      </div>
+      <h1 class="about-hero__title">
+        Personas reales detrás de<br>
+        <span>cada proyecto</span>
+      </h1>
+      <p class="about-hero__desc">
+        Innova Team nació con una idea simple: que cualquier negocio pueda competir digitalmente sin pagar precios de agencia grande. Operamos desde <strong style="color:#fff;">Chile y Venezuela</strong>, construyendo soluciones que generan resultados reales.
+      </p>
+ 
+      <!-- Stats -->
+      <div class="about-stats" aria-label="Estadísticas del equipo">
+        <div class="about-stat">
+          <div class="about-stat__number">+150</div>
+          <div class="about-stat__label">Proyectos</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat__number">+100</div>
+          <div class="about-stat__label">Clientes</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat__number">2</div>
+          <div class="about-stat__label">Países</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat__number">24/7</div>
+          <div class="about-stat__label">Soporte</div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ── Historia + Valores ── -->
+  <section class="about-story" aria-label="Nuestra historia">
+    <div class="about-story__inner">
+ 
+      <!-- Texto izquierdo -->
+      <div>
+        <p class="about-story__label">Nuestra historia</p>
+        <h2 class="about-story__title">
+          Empezamos pequeños,<br>
+          pensamos en <span>grande</span>
+        </h2>
+        <p class="about-story__text">
+          Innova Team nació en <strong>Rancagua, Chile</strong>, impulsado por la convicción de que el acceso a tecnología de calidad no debería ser exclusivo de las grandes empresas. Desde el primer día, apostamos por construir productos digitales honestos, funcionales y a medida.
+        </p>
+        <p class="about-story__text">
+          Hoy operamos también desde <strong>Venezuela</strong>, ampliando nuestra presencia en Latinoamérica y acercándonos a más negocios que necesitan dar el salto digital sin complicaciones.
+        </p>
+ 
+        <div class="about-story__flags">
+          <span>🇨🇱</span>
+          <span>Chile</span>
+          <span style="color:rgba(240,240,240,0.3)">&amp;</span>
+          <span>🇻🇪</span>
+          <strong>Venezuela</strong>
+        </div>
+      </div>
+ 
+      <!-- Valores derecha -->
+      <div class="about-story__values">
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="value-card__title">Transparencia total</p>
+            <p class="value-card__desc">Precios claros, plazos reales y comunicación directa en cada etapa del proyecto.</p>
+          </div>
+        </div>
+ 
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div>
+            <p class="value-card__title">Velocidad y rendimiento</p>
+            <p class="value-card__desc">Cada línea de código está pensada para que tu sitio cargue rápido y convierta mejor.</p>
+          </div>
+        </div>
+ 
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div>
+            <p class="value-card__title">Trato personalizado</p>
+            <p class="value-card__desc">No somos una fábrica de sitios. Cada cliente recibe atención directa del equipo que construye su proyecto.</p>
+          </div>
+        </div>
+ 
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <p class="value-card__title">Soporte continuo</p>
+            <p class="value-card__desc">La relación no termina al entregar el proyecto. Estamos disponibles 24/7 cuando nos necesitas.</p>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- ── Equipo ── -->
+  <section class="about-team" aria-label="Nuestro equipo">
+    <div class="about-team__header">
+      <p class="about-team__label">&lt; el equipo /&gt;</p>
+      <h2 class="about-team__title">Las personas que hacen<br><span>posible todo</span></h2>
+      <p class="about-team__subtitle">Tres personas con una obsesión en común: entregar proyectos que funcionen de verdad.</p>
+    </div>
+ 
+    <div class="about-team__grid">
+ 
+      <!-- Edward -->
+      <article class="member-card">
+        <div class="member-card__avatar avatar--edward" aria-label="Avatar de Edward Cumana">
+          EC
+        </div>
+        <span class="member-card__founder">⭐ Fundador</span>
+        <h3 class="member-card__name">Edward Cumana</h3>
+        <p class="member-card__role">Fundador & Desarrollador Full Stack</p>
+        <p class="member-card__bio">Arquitecto de las soluciones de Innova Team. Lidera el desarrollo técnico y la visión estratégica de cada proyecto desde el primer día.</p>
+      </article>
+ 
+      <!-- Alicia -->
+      <article class="member-card">
+        <div class="member-card__avatar avatar--alicia" aria-label="Avatar de Alicia Murillo">
+          AM
+        </div>
+        <h3 class="member-card__name">Alicia Murillo</h3>
+        <p class="member-card__role">Diseñadora UI/UX & Creatividad Digital</p>
+        <p class="member-card__bio">Transforma ideas en interfaces que enamoran. Se asegura de que cada proyecto no solo funcione, sino que se vea y se sienta excepcional.</p>
+      </article>
+ 
+      <!-- Richard -->
+      <article class="member-card">
+        <div class="member-card__avatar avatar--richard" aria-label="Avatar de Richard Omi">
+          RO
+        </div>
+        <h3 class="member-card__name">Richard Omi</h3>
+        <p class="member-card__role">Desarrollador Full Stack & Soluciones Backend</p>
+        <p class="member-card__bio">Especialista en construir la lógica que hace funcionar todo por detrás. Bases de datos, APIs e integraciones que escalan con tu negocio.</p>
+      </article>
+ 
+    </div>
+  </section>
+ 
+  <!-- ── Cómo trabajamos ── -->
+  <section class="about-process" aria-label="Nuestro proceso de trabajo">
+    <div class="about-process__header">
+      <p class="about-process__label">&lt; nuestro proceso /&gt;</p>
+      <h2 class="about-process__title">Cómo convertimos tu idea<br>en <span>realidad</span></h2>
+    </div>
+ 
+    <div class="about-process__grid">
+ 
+      <div class="process-card">
+        <span class="process-card__number">01</span>
+        <div class="process-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+        </div>
+        <h3 class="process-card__title">Entendemos tu negocio</h3>
+        <p class="process-card__desc">Analizamos tus necesidades, objetivos y mercado para definir la estrategia correcta antes de escribir una sola línea de código.</p>
+      </div>
+ 
+      <div class="process-card">
+        <span class="process-card__number">02</span>
+        <div class="process-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+        </div>
+        <h3 class="process-card__title">Diseñamos la solución</h3>
+        <p class="process-card__desc">Creamos prototipos y maquetas para que puedas ver y aprobar el resultado antes de la fase de desarrollo final.</p>
+      </div>
+ 
+      <div class="process-card">
+        <span class="process-card__number">03</span>
+        <div class="process-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 4 12 14.01 9 11.01"/>
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          </svg>
+        </div>
+        <h3 class="process-card__title">Lanzamos y optimizamos</h3>
+        <p class="process-card__desc">Publicamos tu proyecto y damos seguimiento continuo para garantizar que funcione perfecto y mejore con el tiempo.</p>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- ── CTA ── -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">¿Listo para transformar tu negocio?</h2>
+      <p class="cta-text">Cotiza tu proyecto en 24h y lleva tu idea al siguiente nivel con el equipo de Innova Team.</p>
+      <a href="https://wa.me/56977770556?text=Hola,%20quiero%20cotizar%20mi%20proyecto%20con%20Innova%20Team" 
+         class="btn-whatsapp" 
+         aria-label="Cotizar por WhatsApp"
+         target="_blank"
+         rel="noopener">
+        <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="whatsapp-text">Cotizar ahora</span>
+      </a>
+    </div>
+  </section>
+ 
+</main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      
+      <!-- Columna 1: Información de contacto -->
+      <div class="footer-column">
+        <h3 class="footer-column__title">Innova Team</h3>
+        <address class="footer-column__address">
+          <p>Torre América de Mall Plaza América (Av. Einstein 290)  Rancagua, Chile.</p>
+          <p><a href="tel:+56977770556">+56 9 7777 0556</a></p>
+          <p><a href="mailto:innova1team@gmail.com">innova1team@gmail.com</a></p>
+        </address>
+      </div>
+
+      <!-- Columna 2: Servicios -->
+      <div class="footer-column">
+        <h3 class="footer-column__title">Servicios</h3>
+        <ul class="footer-column__list">
+          <li><a href="#">Desarrollo Web</a></li>
+          <li><a href="#">Tiendas Virtuales</a></li>
+          <li><a href="#">Sistema de Software</a></li>
+          <li><a href="#">Apps Móviles</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Enlaces rápidos -->
+      <div class="footer-column">
+        <h3 class="footer-column__title">Enlaces Rápidos</h3>
+        <ul class="footer-column__list">
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="#">Precios</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4: Descargar App -->
+      <div class="footer-column footer-app">
+        <h3 class="footer-column__title">Descargar App <p class="footer-column__address">(Próximamente)</p></h3>
+        
+        <div class="footer-app__content">
+          <div class="footer-qr">
+            <img src="assets/https_innovateam_netlify_app_.png" alt="Código QR para descargar app">
+          </div>
+          <div class="footer-stores">
+            <a>
+              <img src="assets/apple.png" alt="Descargar en App Store">
+            </a>
+            <a>
+              <img src="assets/playstore.png" alt="Descargar en Google Play">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fila inferior con copyright -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 Innova Team. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Burbuja flotante -->
+  <div class="chat-bubble">
+    <div class="chat-bubble__tooltip" id="chatTooltip" onclick="toggleChat()">
+      <p>👋 ¡Hola! ¿Necesitas una <strong>web o app</strong> para tu negocio?</p>
+    </div>
+    <button class="chat-bubble__btn" id="chatBtn" onclick="toggleChat()" aria-label="Abrir chat">
+      <span class="chat-bubble__dot"></span>
+      <svg class="icon-chat" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+      </svg>
+      <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Ventana del chat -->
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat de soporte Innova Team">
+    <div class="chat-window__header">
+      <div class="chat-header__avatar">💻</div>
+      <div class="chat-header__info">
+        <p class="chat-header__name">Innova Team</p>
+        <p class="chat-header__status">En línea ahora</p>
+      </div>
+    </div>
+
+    <div class="chat-window__messages" id="chatMessages"></div>
+
+    <div class="chat-options" id="chatOptions"></div>
+
+    <div class="chat-window__footer">
+      <a id="waBtn" href="https://wa.me/56977770556?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" 
+         class="chat-wa-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.836L.057 23.625a.75.75 0 00.92.92l5.789-1.467A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.715 9.715 0 01-4.964-1.363l-.355-.211-3.686.935.951-3.585-.232-.369A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+        </svg>
+        Continuar en WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Configuración
+    const WA_NUMBER = '56977770556';
+    const AGENT_NAME = 'Innova Team';
+
+    const flows = {
+      start: {
+        msg: '¡Hola! 👋 Soy el asistente de Innova Team. ¿En qué puedo ayudarte hoy?',
+        options: [
+          { label: '🌐 Quiero una Página web',    next: 'web' },
+          { label: '🛒 Quiero una Tienda online', next: 'tienda' },
+          { label: '📱 Quiero una App móvil',     next: 'app' },
+          { label: '⚙️ Quiero un Sistema de Software', next: 'software' },
+        ]
+      },
+      web: {
+        msg: '¡Genial! Una web profesional es el primer paso  ¿Qué tipo de negocio tienes?',
+        options: [
+          { label: '🏢 Empresa / Servicios', next: 'cotizar' },
+          { label: '🏫 Colegio / Institución', next: 'cotizar' },
+          { label: '🏠 Inmobiliaria',         next: 'cotizar' },
+          { label: '🍽 Restaurante / Local',   next: 'cotizar' },
+        ]
+      },
+      tienda: {
+        msg: '¡Perfecto! Con tu tienda online vendes las 24 horas 🛒 ¿Cuántos productos tienes aproximadamente?',
+        options: [
+          { label: 'Menos de 50',    next: 'cotizar' },
+          { label: 'Entre 50-200',   next: 'cotizar' },
+          { label: 'Más de 200',     next: 'cotizar' },
+        ]
+      },
+      app: {
+        msg: '¡Las apps abren un mundo de posibilidades! 📱 ¿Para qué plataforma la necesitas?',
+        options: [
+          { label: '🍎 Solo iOS',         next: 'cotizar' },
+          { label: '🤖 Solo Android',     next: 'cotizar' },
+          { label: '📲 iOS y Android',    next: 'cotizar' },
+        ]
+      },
+      software: {
+        msg: '¡Perfecto! Un sistema a medida centraliza tu negocio 🖥️ ¿Qué necesitas gestionar?',
+        options: [
+          { label: '📦 Inventario / Ventas',     next: 'cotizar' },
+          { label: '👥 Clientes / CRM',          next: 'cotizar' },
+          { label: '📊 Reportes / Dashboard',    next: 'cotizar' },
+          { label: '🔧 Algo más específico',     next: 'cotizar' },
+        ]
+      },
+      cotizar: {
+        msg: '¡Excelente! 🎉 Te conectaré con nuestro equipo ahora mismo. Haz clic en el botón de abajo para continuar por WhatsApp.',
+        options: []
+      }
+    };
+
+    let chatOpen = false;
+    let started = false;
+
+    function toggleChat() {
+      chatOpen = !chatOpen;
+      const win = document.getElementById('chatWindow');
+      const btn = document.getElementById('chatBtn');
+      const tooltip = document.getElementById('chatTooltip');
+
+      win.classList.toggle('is-open', chatOpen);
+      btn.classList.toggle('is-open', chatOpen);
+
+      if (chatOpen) {
+        tooltip.style.display = 'none';
+        if (!started) { started = true; startFlow('start'); }
+      }
+    }
+
+    function getTime() {
+      return new Date().toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function addMessage(text, type = 'bot', delay = 0) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          const msgs = document.getElementById('chatMessages');
+
+          if (type === 'bot') {
+            const typing = document.createElement('div');
+            typing.className = 'typing';
+            typing.innerHTML = '<span></span><span></span><span></span>';
+            msgs.appendChild(typing);
+            msgs.scrollTop = msgs.scrollHeight;
+
+            setTimeout(() => {
+              typing.remove();
+              const el = document.createElement('div');
+              el.className = 'msg msg--bot';
+              el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
+              msgs.appendChild(el);
+              msgs.scrollTop = msgs.scrollHeight;
+              resolve();
+            }, 900);
+          } else {
+            const el = document.createElement('div');
+            el.className = 'msg msg--user';
+            el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
+            msgs.appendChild(el);
+            msgs.scrollTop = msgs.scrollHeight;
+            resolve();
+          }
+        }, delay);
+      });
+    }
+
+    function showOptions(options) {
+      const container = document.getElementById('chatOptions');
+      container.innerHTML = '';
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'chat-option';
+        btn.textContent = opt.label;
+        btn.onclick = () => selectOption(opt);
+        container.appendChild(btn);
+      });
+    }
+
+    async function startFlow(key) {
+      const step = flows[key];
+      if (!step) return;
+
+      if (key === 'cotizar') {
+        const waBtn = document.getElementById('waBtn');
+        waBtn.href = `https://wa.me/${WA_NUMBER}?text=Hola%2C%20vengo%20del%20chat%20de%20su%20web%20y%20quiero%20cotizar%20un%20proyecto`;
+      }
+
+      showOptions([]);
+      await addMessage(step.msg, 'bot', 300);
+      if (step.options.length > 0) showOptions(step.options);
+    }
+
+    async function selectOption(opt) {
+      showOptions([]);
+      await addMessage(opt.label, 'user');
+      await startFlow(opt.next);
+    }
+  </script>
+</body>
+</html>

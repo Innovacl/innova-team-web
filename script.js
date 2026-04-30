@@ -128,3 +128,26 @@
     });
   })();
 })();
+
+// FAQ Acordeón
+document.querySelectorAll('.faq__question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq__answer');
+    const isOpen = item.classList.contains('is-open');
+
+    // Cierra todos
+    document.querySelectorAll('.faq__item').forEach(i => {
+      i.classList.remove('is-open');
+      i.querySelector('.faq__answer').style.maxHeight = null;
+      i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+    });
+
+    // Abre el clickeado si estaba cerrado
+    if (!isOpen) {
+      item.classList.add('is-open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
