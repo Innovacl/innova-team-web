@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aplicaciones Móviles — Innova Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Desarrollo de apps móviles para iOS y Android. Aplicaciones nativas y multiplataforma desde la idea hasta el App Store.">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/service-page.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="navbar" role="banner">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo" aria-label="Inicio">
+        <img src="assets/innovasinfondo.png" alt="Innova Team Logo" class="navbar__logo-img">
+      </a>
+      <nav class="navbar__nav" id="navbarNav" aria-label="Navegación principal">
+        <ul class="navbar__menu">
+          <li class="navbar__menu-item"><a href="index.html" class="navbar__link">Inicio</a></li>
+          <li class="navbar__menu-item navbar__menu-item--has-submenu">
+            <button class="navbar__submenu-toggle" aria-expanded="false" aria-label="Expandir servicios">
+              <span>Servicios</span>
+              <svg class="navbar__submenu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <ul class="navbar__submenu">
+              <li><a href="servicio-web.html" class="navbar__submenu-link">Desarrollo web</a></li>
+              <li><a href="servicio-tienda.html" class="navbar__submenu-link">Tiendas virtuales</a></li>
+              <li><a href="servicio-software.html" class="navbar__submenu-link">Sistemas de software</a></li>
+              <li><a href="servicio-app.html" class="navbar__submenu-link">Apps móviles</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="https://wa.me/569777770556" class="btn-whatsapp" aria-label="Contactar por WhatsApp">
+          <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span class="whatsapp-text">WhatsApp</span>
+        </a>
+      </nav>
+      <button class="navbar__toggle" id="navbarToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbarNav">
+        <span class="navbar__toggle-icon"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="service-hero">
+      <div class="service-hero__glow service-hero__glow--1" aria-hidden="true"></div>
+      <div class="service-hero__glow service-hero__glow--2" aria-hidden="true"></div>
+      <div class="service-hero__content">
+        <div class="service-hero__badge">
+          <span class="service-hero__badge-dot" aria-hidden="true"></span>
+          &lt; aplicaciones móviles /&gt;
+        </div>
+        <div class="service-hero__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.5 1.5H13.5A2.25 2.25 0 0115.75 3.75v16.5a2.25 2.25 0 01-2.25 2.25h-3a2.25 2.25 0 01-2.25-2.25V3.75A2.25 2.25 0 0110.5 1.5z"/>
+            <path d="M12 18v.001"/>
+          </svg>
+        </div>
+        <h1 class="service-hero__title">Tu negocio en el<br><span>bolsillo de tus clientes</span></h1>
+        <p class="service-hero__desc">Desarrollamos apps móviles nativas y multiplataforma para iOS y Android. Desde la idea hasta la publicación en el App Store y Google Play.</p>
+        <a href="https://wa.me/56977770556?text=Hola%2C%20quiero%20cotizar%20una%20aplicaci%C3%B3n%20m%C3%B3vil" class="service-hero__cta" target="_blank" rel="noopener">
+          Cotizar mi app →
+        </a>
+      </div>
+    </section>
+
+    <section class="service-features">
+      <div class="service-features__header">
+        <p class="service-section__label">&lt; qué incluye /&gt;</p>
+        <h2 class="service-section__title">Apps que tus usuarios<br><span>querrán usar cada día</span></h2>
+        <p class="service-section__subtitle">Funcionalidades modernas que hacen que tu app se destaque y genere engagement real.</p>
+      </div>
+      <div class="service-features__grid">
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <p class="feature-card__title">Registro y autenticación</p>
+            <p class="feature-card__desc">Login seguro con correo, Google, Apple o redes sociales. Perfiles de usuario personalizables.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <p class="feature-card__title">Geolocalización y mapas</p>
+            <p class="feature-card__desc">Integración de Google Maps para apps de delivery, servicios a domicilio o seguimiento en tiempo real.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          </div>
+          <div>
+            <p class="feature-card__title">Push notifications</p>
+            <p class="feature-card__desc">Notificaciones push para mantener a tus usuarios informados y aumentar la retención de la app.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <div>
+            <p class="feature-card__title">Chat en tiempo real</p>
+            <p class="feature-card__desc">Sistema de mensajería integrado para que usuarios y empresas se comuniquen dentro de la app.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div>
+            <p class="feature-card__title">Pagos in-app</p>
+            <p class="feature-card__desc">Integración de pasarelas de pago para que tus usuarios compren directamente desde la aplicación.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <p class="feature-card__title">Analytics integrado</p>
+            <p class="feature-card__desc">Panel de métricas para entender cómo usan tu app, qué funciona y dónde mejorar.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="service-process">
+      <div class="service-process__header">
+        <p class="service-section__label">&lt; cómo trabajamos /&gt;</p>
+        <h2 class="service-section__title">De la idea al <span>App Store</span></h2>
+      </div>
+      <div class="service-process__steps">
+        <div class="process-step">
+          <div class="process-step__left"><div class="process-step__num">01</div><div class="process-step__line"></div></div>
+          <div class="process-step__content">
+            <p class="process-step__title">Definición del producto</p>
+            <p class="process-step__desc">Definimos las funcionalidades esenciales de tu app, el flujo de usuario y la plataforma objetivo (iOS, Android o ambas).</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__left"><div class="process-step__num">02</div><div class="process-step__line"></div></div>
+          <div class="process-step__content">
+            <p class="process-step__title">Diseño UX/UI</p>
+            <p class="process-step__desc">Creamos wireframes y el diseño visual de cada pantalla. Tú apruebas el flujo completo antes de que empiece el desarrollo.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__left"><div class="process-step__num">03</div><div class="process-step__line"></div></div>
+          <div class="process-step__content">
+            <p class="process-step__title">Desarrollo e integración</p>
+            <p class="process-step__desc">Desarrollamos la app con las integraciones necesarias (pagos, mapas, notificaciones, etc.) con entregas parciales para revisión.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__left"><div class="process-step__num">04</div><div class="process-step__line"></div></div>
+          <div class="process-step__content">
+            <p class="process-step__title">Publicación y soporte</p>
+            <p class="process-step__desc">Gestionamos la publicación en App Store y Google Play y damos soporte post-lanzamiento para corregir cualquier incidencia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-cta">
+      <div class="service-cta__inner">
+        <h2 class="service-cta__title">¿Tienes una idea<br><span>para una app?</span></h2>
+        <p class="service-cta__text">Cuéntanos tu idea y te decimos cómo hacerla realidad. Primera consulta completamente gratis.</p>
+        <div class="service-cta__btns">
+          <a href="index.html" class="btn-back">← Volver al inicio</a>
+          <a href="https://wa.me/56977770556?text=Hola%2C%20tengo%20una%20idea%20para%20una%20app%20y%20quiero%20cotizarla" class="service-hero__cta" target="_blank" rel="noopener">Cotizar mi app →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3 class="footer-column__title">Innova Team</h3>
+        <address class="footer-column__address">
+          <p>Torre América de Mall Plaza América (Av. Einstein 290) Rancagua, Chile.</p>
+          <p><a href="tel:+56977770556">+56 9 7777 0556</a></p>
+          <p><a href="mailto:innova1team@gmail.com">innova1team@gmail.com</a></p>
+        </address>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-column__title">Servicios</h3>
+        <ul class="footer-column__list">
+          <li><a href="servicio-web.html">Desarrollo Web</a></li>
+          <li><a href="servicio-tienda.html">Tiendas Virtuales</a></li>
+          <li><a href="servicio-software.html">Sistema de Software</a></li>
+          <li><a href="servicio-app.html">Apps Móviles</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-column__title">Enlaces Rápidos</h3>
+        <ul class="footer-column__list">
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="index.html#planes">Precios</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Innova Team. Todos los derechos reservados.</p></div>
+  </footer>
+
+</body>
+</html>
