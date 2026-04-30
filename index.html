@@ -29,9 +29,12 @@
   <!-- Navbar -->
   <header class="navbar" role="banner">
     <div class="navbar__container">
-      <a href="index.html" class="navbar__logo" aria-label="Inicio">
-        <img src="assets/innovasinfondo.png" alt="Innova Team Logo" class="navbar__logo-img">
-      </a>
+        <a href="index.html" class="navbar__logo" aria-label="Inicio">
+          <picture>
+            <source srcset="assets/webp/innovasinfondo.webp" type="image/webp">
+            <img src="assets/innovasinfondo.png" alt="Innova Team Logo" class="navbar__logo-img" >
+          </picture>
+        </a>
 
       <nav class="navbar__nav" id="navbarNav" aria-label="Navegación principal">
         <ul class="navbar__menu">
@@ -381,105 +384,87 @@
   <!-- Portafolio -->
  
  <!--Portafolio-->
-  <section class="portfolio" id="portafolio" aria-label="Nuestro portafolio">
-    <div class="container">
-      <h2 class="section-title">Diseñamos soluciones adaptadas a cada industria</h2>
-      <!--<p class="portfolio__subtitle">Diseñamos soluciones web adaptadas a cada industria</p>
-      
-      <!-- Filtros por industria -->
-      <div class="portfolio__filters">
-        <button class="portfolio__filter-btn portfolio__filter-btn--active">Todos</button>
-        <button class="portfolio__filter-btn">Negocios</button>
-        <button class="portfolio__filter-btn">Servicios</button>
-        <button class="portfolio__filter-btn">E-commerce</button>
-        <button class="portfolio__filter-btn">Marca personal</button>
-      </div>
-      
-      <div class="portfolio__grid">
-        <article class="card card--portfolio" aria-labelledby="project-1-title">
-          <div class="card__image-wrapper">
-            <div class="card__image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-              <img src="assets/gallardo.png" alt="Landing para negocio local">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </div>
-            <div class="card__overlay" aria-hidden="true">
-              <a href="https://gallardopropiedades.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
-                <span>Ver proyecto</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="card__content">
-            <span class="card__type">Landing Page</span>
-            <h3 class="card__title" id="project-1-title">Propiedades Gallardo</h3>
-            <p class="card__text">Sitio web inmobiliario con búsqueda avanzada de propiedades y diseño moderno.</p>
-          </div>
-        </article>
+  
+<section class="services" aria-label="Portafolio destacado">
+  <div class="container">
+    <h2 class="section-title">Nuestro Portafolio</h2>
 
-        <article class="card card--portfolio" aria-labelledby="project-2-title">
-          <div class="card__image-wrapper">
-            <div class="card__image" style="background: linear-gradient(135deg, #f5576c 0%, #4c1d95 100%);">
-              <img src="assets/santacruz.png" alt="Sitio web colegio Santa Cruz">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </div>
-            <div class="card__overlay" aria-hidden="true">
-              <a href="https://www.colegiosantacruz.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
-                <span>Ver proyecto</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="card__content">
-            <span class="card__type">Sitio Web Institucional</span>
-            <h3 class="card__title" id="project-2-title">Colegio Santa Cruz</h3>
-            <p class="card__text">Portal educativo con información académica, admisión y noticias institucionales.</p>
-          </div>
-        </article>
+    <div class="services__grid" style="grid-template-columns: repeat(auto-fill, minmax(300px,1fr));">
 
-        <article class="card card--portfolio" aria-labelledby="project-3-title">
-          <div class="card__image-wrapper">
-            <div class="card__image" style="background: linear-gradient(135deg, #00E6A8 0%, #1DA1F2 100%);">
-              <img src="assets/santamonica.png" alt="Sitio web Santa Monica Chile">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-            </div>
-            <div class="card__overlay" aria-hidden="true">
-              <a href="https://sm-em.com/" class="card__link" target="_blank" rel="noopener noreferrer">
-                <span>Ver proyecto</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="card__content">
-            <span class="card__type">Sitio Web Corporativo</span>
-            <h3 class="card__title" id="project-3-title">Santa Monica Chile</h3>
-            <p class="card__text">Web corporativa con catálogo de productos de maquinaria pesada movimiento de tierra</p>
-          </div>
-        </article>
-      </div>
-     
-      <div class="portfolio__cta-container">
-        <a href="proyectos.html" class="portfolio__cta-link">Ver todos los proyectos</a>
-      </div>
+      <article class="card card--service" style="padding:0; overflow:hidden; text-align:left;">
+        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
+          <picture>
+            <source srcset="assets/webp/santamonica.webp" type="image/webp">
+            <img src="assets/santamonica.png" alt="Santa Monica Chile"
+                 style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
+                 onmouseenter="this.style.objectPosition='bottom'"
+                 onmouseleave="this.style.objectPosition='top'"
+                 loading="lazy">
+          </picture>
+          <span style="position:absolute;top:10px;left:10px;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:9999px;background:rgba(102,126,234,.25);color:#a5b4fc;border:1px solid rgba(102,126,234,.3);text-transform:uppercase;letter-spacing:.05em;backdrop-filter:blur(8px);">Web</span>
+        </div>
+        <div style="padding:14px 16px 18px;">
+          <p style="font-weight:700;color:#fff;font-size:.95rem;margin-bottom:4px;">Santa Monica Chile</p>
+          <p style="font-size:.78rem;color:rgba(240,240,240,.45);line-height:1.55;margin-bottom:10px;">Web corporativa con catálogo de maquinaria pesada — camiones y tractores.</p>
+          <a href="https://sm-em.com/" target="_blank" rel="noopener"
+             style="font-size:.8rem;font-weight:700;color:#00E6A8;text-decoration:none;">Ver proyecto →</a>
+        </div>
+      </article>
+
+      <article class="card card--service" style="padding:0; overflow:hidden; text-align:left;">
+        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
+          <picture>
+            <source srcset="assets/webp/santacruz.webp" type="image/webp">
+            <img src="assets/santacruz.png" alt="Colegio Santa Cruz"
+                 style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
+                 onmouseenter="this.style.objectPosition='bottom'"
+                 onmouseleave="this.style.objectPosition='top'"
+                 loading="lazy">
+          </picture>
+          <span style="position:absolute;top:10px;left:10px;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:9999px;background:rgba(102,126,234,.25);color:#a5b4fc;border:1px solid rgba(102,126,234,.3);text-transform:uppercase;letter-spacing:.05em;backdrop-filter:blur(8px);">Web</span>
+        </div>
+        <div style="padding:14px 16px 18px;">
+          <p style="font-weight:700;color:#fff;font-size:.95rem;margin-bottom:4px;">Colegio Santa Cruz</p>
+          <p style="font-size:.78rem;color:rgba(240,240,240,.45);line-height:1.55;margin-bottom:10px;">Portal educativo institucional con admisión, noticias y calendario académico.</p>
+          <a href="https://www.colegiosantacruz.cl/" target="_blank" rel="noopener"
+             style="font-size:.8rem;font-weight:700;color:#00E6A8;text-decoration:none;">Ver proyecto →</a>
+        </div>
+      </article>
+
+      <article class="card card--service" style="padding:0; overflow:hidden; text-align:left;">
+        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
+          <picture>
+            <source srcset="assets/webp/ropa.webp" type="image/webp">
+            <img src="assets/ropa.png" alt="Street Machine Chile"
+                 style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
+                 onmouseenter="this.style.objectPosition='bottom'"
+                 onmouseleave="this.style.objectPosition='top'"
+                 loading="lazy">
+          </picture>
+          <span style="position:absolute;top:10px;left:10px;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:9999px;background:rgba(0,230,168,.2);color:#00E6A8;border:1px solid rgba(0,230,168,.3);text-transform:uppercase;letter-spacing:.05em;backdrop-filter:blur(8px);">Tienda</span>
+        </div>
+        <div style="padding:14px 16px 18px;">
+          <p style="font-weight:700;color:#fff;font-size:.95rem;margin-bottom:4px;">Street Machine Chile</p>
+          <p style="font-size:.78rem;color:rgba(240,240,240,.45);line-height:1.55;margin-bottom:10px;">Tienda virtual urbana de ropa, zapatillas y accesorios con catálogo completo.</p>
+          <a href="https://www.streetmachine.cl/" target="_blank" rel="noopener"
+             style="font-size:.8rem;font-weight:700;color:#00E6A8;text-decoration:none;">Ver proyecto →</a>
+        </div>
+      </article>
+
     </div>
-  </section>
+
+    <!-- CTA ver todos -->
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="proyectos.html"
+         style="display:inline-flex;align-items:center;gap:8px;padding:.875rem 2rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:9999px;color:#fff;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .25s ease;"
+         onmouseenter="this.style.background='rgba(102,126,234,.12)';this.style.borderColor='rgba(102,126,234,.35)'"
+         onmouseleave="this.style.background='rgba(255,255,255,.05)';this.style.borderColor='rgba(255,255,255,.12)'">
+        Ver todos los proyectos →
+      </a>
+    </div>
+
+  </div>
+</section>
 
   <!-- CTA
   <section class="cta" aria-label="Llamado a la acción">
@@ -743,14 +728,23 @@
         
         <div class="footer-app__content">
           <div class="footer-qr">
-            <img src="assets/https_innovateam_netlify_app_.png" alt="Código QR para descargar app">
+            <picture>
+              <source srcset="assets/webp/https_innovateam_netlify_app_.webp" type="image/webp">
+              <img src="assets/https_innovateam_netlify_app_.png" alt="Código QR para descargar app">
+            </picture>
           </div>
           <div class="footer-stores">
             <a>
-              <img src="assets/apple.png" alt="Descargar en App Store">
+              <picture>
+                <source srcset="assets/webp/apple.webp" type="image/webp">
+                <img src="assets/apple.png" alt="Descargar en App Store">
+              </picture>
             </a>
             <a>
-              <img src="assets/playstore.png" alt="Descargar en Google Play">
+              <picture>
+                <source srcset="assets/webp/playstore.webp" type="image/webp">
+                <img src="assets/playstore.png" alt="Descargar en Google Play">
+              </picture>
             </a>
           </div>
         </div>

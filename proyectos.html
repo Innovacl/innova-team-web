@@ -2,429 +2,1276 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Innova Team</title>
+  <title>Proyectos — Innova Team</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creamos páginas web modernas que hacen crecer tu negocio. Diseño profesional, rápido y enfocado en resultados.">
+  <meta name="description" content="Portafolio de proyectos de Innova Team. Sitios web, tiendas virtuales, apps y sistemas de software desarrollados en Chile y Venezuela.">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/hero.css">
- 
-  <link rel="stylesheet" href="css/portafolio.css">
+  <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/footer.css">
- 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  
   <script src="script.js" defer></script>
+
+  <style>
+    /* ========================================
+       PROYECTOS PAGE — INNOVA TEAM
+       Micro-animaciones + Scroll Animations
+       ======================================== */
+
+    /* ── Variables locales ── */
+    :root {
+      --accent:   #667eea;
+      --accent-2: #764ba2;
+      --accent-3: #00E6A8;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    /* ── Reset base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ============================
+       SCROLL REVEAL — base state
+       ============================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.4,0,0.2,1),
+                  transform 0.65s cubic-bezier(0.4,0,0.2,1);
+    }
+    .reveal.reveal--left  { transform: translateX(-28px); }
+    .reveal.reveal--right { transform: translateX(28px); }
+    .reveal.reveal--scale { transform: scale(0.94); }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translate(0) scale(1);
+    }
+
+    /* Stagger delays */
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ============================
+       HERO
+       ============================ */
+    .portfolio-hero {
+      position: relative;
+      padding: 9rem 1.5rem 5rem;
+      text-align: center;
+      overflow: hidden;
+      background: #09090b;
+    }
+
+    .portfolio-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(102,126,234,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(102,126,234,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 30%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .portfolio-hero__glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    .portfolio-hero__glow--1 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(102,126,234,0.35) 0%, transparent 70%);
+      top: -80px; left: -80px;
+      animation: heroGlow 10s ease-in-out infinite;
+    }
+    .portfolio-hero__glow--2 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0,230,168,0.2) 0%, transparent 70%);
+      top: 0; right: -60px;
+      animation: heroGlow 10s ease-in-out infinite 3s;
+    }
+    @keyframes heroGlow {
+      0%,100% { transform: translate(0,0); }
+      50%      { transform: translate(15px,-20px); }
+    }
+
+    .portfolio-hero__content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .portfolio-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.875rem;
+      background: rgba(102,126,234,0.08);
+      border: 1px solid rgba(102,126,234,0.2);
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-3);
+      letter-spacing: 0.04em;
+      animation: fadeInDown 0.6s ease both;
+    }
+    .portfolio-hero__badge-dot {
+      width: 6px; height: 6px;
+      background: var(--accent-3);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent-3);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+    @keyframes dotPulse {
+      0%,100% { box-shadow: 0 0 6px var(--accent-3); }
+      50%      { box-shadow: 0 0 14px var(--accent-3); }
+    }
+
+    .portfolio-hero__title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.6s ease 0.1s both;
+    }
+    .portfolio-hero__title span {
+      background: linear-gradient(135deg, #667eea 0%, #a78bfa 40%, #00E6A8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .portfolio-hero__desc {
+      font-size: 1.05rem;
+      color: rgba(240,240,240,0.5);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+      animation: fadeInUp 0.6s ease 0.2s both;
+    }
+
+    /* Contador de proyectos */
+    .portfolio-hero__counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.875rem 2rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 9999px;
+      animation: fadeInUp 0.6s ease 0.3s both;
+    }
+    .counter-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .counter-item__num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+    .counter-item__label {
+      font-size: 0.65rem;
+      color: rgba(240,240,240,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 500;
+    }
+    .counter-sep {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ============================
+       PROYECTO DESTACADO
+       ============================ */
+    .featured-section {
+      padding: 4rem 1.5rem 2rem;
+      background: #09090b;
+    }
+
+    .featured-section__label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+
+    .featured-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #667eea, #a78bfa, #00E6A8);
+    }
+
+    .featured-card:hover {
+      border-color: rgba(102,126,234,0.3);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+
+    /* Screenshot con scroll simulado al hover */
+    .featured-card__img {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+    }
+    .featured-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: object-position 3s ease;
+    }
+    .featured-card:hover .featured-card__img img {
+      object-position: bottom;
+    }
+
+    .featured-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(9,9,11,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+    .featured-card:hover .featured-card__overlay { opacity: 1; }
+
+    .featured-card__visit {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0.65rem 1.25rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transform: translateY(8px);
+      transition: transform 0.3s ease;
+    }
+    .featured-card:hover .featured-card__visit { transform: translateY(0); }
+    .featured-card__visit svg { width: 14px; height: 14px; }
+
+    .featured-card__info {
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(102,126,234,0.15);
+      color: #a5b4fc;
+      border: 1px solid rgba(102,126,234,0.3);
+      width: fit-content;
+    }
+
+    .featured-card__title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .featured-card__desc {
+      font-size: 0.875rem;
+      color: rgba(240,240,240,0.5);
+      line-height: 1.7;
+    }
+
+    .featured-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 3px 9px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      color: rgba(240,240,240,0.5);
+    }
+
+    .featured-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-3);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+      width: fit-content;
+    }
+    .featured-card__link:hover { gap: 10px; }
+
+    /* ============================
+       FILTROS
+       ============================ */
+    .portfolio-filters-section {
+      padding: 3rem 1.5rem 1.5rem;
+      background: #09090b;
+    }
+
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 1.1rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover:not(:disabled) {
+      border-color: rgba(102,126,234,0.4);
+      color: #fff;
+      background: rgba(102,126,234,0.1);
+    }
+    .filter-btn.is-active {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(102,126,234,0.35);
+    }
+    .filter-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .filter-count {
+      font-size: 0.7rem;
+      background: rgba(255,255,255,0.12);
+      border-radius: 9999px;
+      padding: 1px 7px;
+      font-weight: 700;
+    }
+    .filter-btn.is-active .filter-count { background: rgba(255,255,255,0.22); }
+    .filter-soon {
+      font-size: 0.6rem;
+      font-weight: 700;
+      background: rgba(0,230,168,0.15);
+      color: var(--accent-3);
+      border-radius: 4px;
+      padding: 1px 5px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ============================
+       GRID DE PROYECTOS
+       ============================ */
+    .portfolio-grid-section {
+      padding: 1.5rem 1.5rem 5rem;
+      background: #09090b;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── Tarjeta de proyecto ── */
+    .project-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      transition:
+        transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px) scale(1.01);
+      border-color: rgba(102,126,234,0.3);
+      box-shadow: 0 20px 48px rgba(0,0,0,0.45);
+    }
+
+    .project-card.is-hidden { display: none; }
+
+    /* Screenshot con scroll al hover */
+    .project-card__img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: rgba(102,126,234,0.06);
+    }
+    .project-card__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: object-position 2.5s ease, transform 0.5s ease;
+      display: block;
+    }
+    .project-card:hover .project-card__img img {
+      object-position: bottom;
+      transform: scale(1.02);
+    }
+
+    /* Overlay */
+    .project-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(9,9,11,0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(4px);
+    }
+    .project-card:hover .project-card__overlay { opacity: 1; }
+
+    .project-card__visit {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0.6rem 1.25rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transform: translateY(8px) scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .project-card:hover .project-card__visit {
+      transform: translateY(0) scale(1);
+    }
+    .project-card__visit svg { width: 13px; height: 13px; }
+
+    /* Badge tipo */
+    .project-card__type {
+      position: absolute;
+      top: 10px; left: 10px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(8px);
+    }
+    .type-web     { background: rgba(102,126,234,0.25); color: #a5b4fc; border: 1px solid rgba(102,126,234,0.3); }
+    .type-tienda  { background: rgba(0,230,168,0.2);    color: #00E6A8;  border: 1px solid rgba(0,230,168,0.3); }
+    .type-app     { background: rgba(251,191,36,0.2);   color: #fbbf24;  border: 1px solid rgba(251,191,36,0.3); }
+    .type-sistema { background: rgba(244,114,182,0.2);  color: #f472b6;  border: 1px solid rgba(244,114,182,0.3); }
+
+    /* Info */
+    .project-card__info {
+      padding: 14px 16px 16px;
+    }
+    .project-card__name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .project-card__desc {
+      font-size: 0.78rem;
+      color: rgba(240,240,240,0.45);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+    .project-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    /* Estado vacío */
+    .portfolio-empty {
+      display: none;
+      text-align: center;
+      padding: 4rem 1rem;
+      color: rgba(255,255,255,0.25);
+      font-size: 0.9rem;
+      grid-column: 1 / -1;
+    }
+    .portfolio-empty.is-visible { display: block; }
+
+    /* ============================
+       CTA FINAL
+       ============================ */
+    .portfolio-cta {
+      padding: 5rem 1.5rem;
+      background: linear-gradient(180deg, #09090b 0%, rgba(102,126,234,0.05) 50%, #09090b 100%);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+    .portfolio-cta__title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.875rem;
+    }
+    .portfolio-cta__title span {
+      background: linear-gradient(135deg, #667eea, #00E6A8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .portfolio-cta__text {
+      font-size: 1rem;
+      color: rgba(240,240,240,0.45);
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+    .portfolio-cta__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.9rem 2rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      border-radius: 9999px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(102,126,234,0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .portfolio-cta__btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.5s ease;
+    }
+    .portfolio-cta__btn:hover::before { left: 100%; }
+    .portfolio-cta__btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(102,126,234,0.55);
+    }
+
+    /* ============================
+       KEYFRAMES HERO
+       ============================ */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================
+       RESPONSIVE
+       ============================ */
+    @media (max-width: 768px) {
+      .portfolio-hero { padding: 7rem 1rem 3.5rem; }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-card__img { aspect-ratio: 16/9; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-grid-section,
+      .featured-section,
+      .portfolio-filters-section { padding-left: 1rem; padding-right: 1rem; }
+      .portfolio-cta { padding: 3.5rem 1rem; }
+      .portfolio-hero__counter { flex-wrap: wrap; gap: 1rem; }
+    }
+
+    @media (min-width: 640px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
 </head>
 <body>
 
- <!-- Navbar -->
+  <!-- Navbar -->
   <header class="navbar" role="banner">
     <div class="navbar__container">
       <a href="index.html" class="navbar__logo" aria-label="Inicio">
-        <img src="assets/innovasinfondo.png" alt="Innova Team Logo" class="navbar__logo-img">
+        <picture>
+          <source srcset="assets/webp/innovasinfondo.webp" type="image/webp">
+          <img src="assets/innovasinfondo.png" alt="Innova Team Logo" class="navbar__logo-img" >
+        </picture>
       </a>
-
       <nav class="navbar__nav" id="navbarNav" aria-label="Navegación principal">
         <ul class="navbar__menu">
-          <li class="navbar__menu-item">
-            <a href="#" class="navbar__link">Inicio</a>
-          </li>
+          <li class="navbar__menu-item"><a href="index.html" class="navbar__link">Inicio</a></li>
           <li class="navbar__menu-item navbar__menu-item--has-submenu">
             <button class="navbar__submenu-toggle" aria-expanded="false" aria-label="Expandir servicios">
               <span>Servicios</span>
-              <svg class="navbar__submenu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
+              <svg class="navbar__submenu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <ul class="navbar__submenu">
-              <li><a href="#apps" class="navbar__submenu-link">Apps móviles</a></li>
-              <li><a href="#web" class="navbar__submenu-link">Desarrollo web</a></li>
-              <li><a href="#tiendas" class="navbar__submenu-link">Tiendas virtuales</a></li>
-              <li><a href="#sistemas" class="navbar__submenu-link">Sistemas de software</a></li>
-              <li><a href="#soporte" class="navbar__submenu-link">Soporte online</a></li>
+              <li><a href="servicio-web.html" class="navbar__submenu-link">Desarrollo web</a></li>
+              <li><a href="servicio-tienda.html" class="navbar__submenu-link">Tiendas virtuales</a></li>
+              <li><a href="servicio-software.html" class="navbar__submenu-link">Sistemas de software</a></li>
+              <li><a href="servicio-app.html" class="navbar__submenu-link">Apps móviles</a></li>
             </ul>
           </li>
         </ul>
-        <a href="https://wa.me/56977770556" class="btn-whatsapp" aria-label="Contactar por WhatsApp">
-          <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-          </svg>
+        <a href="https://wa.me/569777770556?text=Hola,%20me%20gustaria%20cotizar%20una%20pagina%20web" class="btn-whatsapp" aria-label="Contactar por WhatsApp">
+          <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           <span class="whatsapp-text">WhatsApp</span>
         </a>
       </nav>
-
       <button class="navbar__toggle" id="navbarToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navbarNav">
         <span class="navbar__toggle-icon"></span>
       </button>
     </div>
-    </header>
+  </header>
 
-  <!-- Botón Volver -->
-  <div class="container" style="padding-top: 2rem; padding-bottom: 1rem;">
-    <a href="index.html" class="btn btn--secondary">← Volver</a>
-  </div>
+  <main>
 
-
-  <!-- Portafolio -->
-  <section class="portfolio" id="portafolio" aria-label="Nuestro portafolio">
-    <div class="container">
-      <h2 class="section-title">Portafolio</h2>
-      
-      <!-- Filtros -->
-      <div class="portfolio__filters">
-        <button class="portfolio__filter-btn portfolio__filter-btn--active" data-filter="all">Todos</button>
-        <button class="portfolio__filter-btn" data-filter="negocios">Negocios</button>
-        <button class="portfolio__filter-btn" data-filter="servicios">Servicios</button>
-        <button class="portfolio__filter-btn" data-filter="ecommerce">E-commerce</button>
-        <button class="portfolio__filter-btn" data-filter="marca">Marca personal</button>
+    <!-- ── Hero ── -->
+    <section class="portfolio-hero" aria-label="Portafolio de proyectos">
+      <div class="portfolio-hero__glow portfolio-hero__glow--1" aria-hidden="true"></div>
+      <div class="portfolio-hero__glow portfolio-hero__glow--2" aria-hidden="true"></div>
+      <div class="portfolio-hero__content">
+        <div class="portfolio-hero__badge">
+          <span class="portfolio-hero__badge-dot" aria-hidden="true"></span>
+          &lt; nuestro trabajo /&gt;
+        </div>
+        <h1 class="portfolio-hero__title">
+          Proyectos que<br><span>hablan por sí solos</span>
+        </h1>
+        <p class="portfolio-hero__desc">
+          Cada proyecto es una solución real construida para un negocio real. Mira lo que hemos hecho.
+        </p>
+        <div class="portfolio-hero__counter" aria-label="Estadísticas del portafolio">
+          <div class="counter-item">
+            <span class="counter-item__num" id="counterProjects">0</span>
+            <span class="counter-item__label">Proyectos</span>
+          </div>
+          <div class="counter-sep"></div>
+          <div class="counter-item">
+            <span class="counter-item__num">+100</span>
+            <span class="counter-item__label">Clientes</span>
+          </div>
+          <div class="counter-sep"></div>
+          <div class="counter-item">
+            <span class="counter-item__num">2</span>
+            <span class="counter-item__label">Países</span>
+          </div>
+        </div>
       </div>
-      
-      <!-- Webs Corporativas -->
-      <div class="portfolio__category">
-        <h3 class="portfolio__category-title">Webs Corporativas</h3>
-        <div class="portfolio__grid">
-<article class="card card--portfolio" data-category="negocios" aria-labelledby="project-2-title">
-            <div class="card__image-wrapper">
-              <div class="card__image" style="background: linear-gradient(135deg, #f5576c 0%, #4c1d95 100%);">
-                <img src="assets/santacruz.png" alt="Sitio web colegio Santa Cruz">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div class="card__overlay" aria-hidden="true">
-                <a href="https://www.colegiosantacruz.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
-                  <span>Ver proyecto</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__content">
-              <span class="card__type">Sitio Web Institucional</span>
-              <h3 class="card__title" id="project-2-title">Colegio Santa Cruz</h3>
-              <p class="card__text">Sitio web para colegio que facilita la admisión online y mantiene informados a los padres.</p>
-            </div>
-          </article>
+    </section>
 
-<article class="card card--portfolio" data-category="negocios" aria-labelledby="project-3-title">
-            <div class="card__image-wrapper">
-              <div class="card__image" style="background: linear-gradient(135deg, #00E6A8 0%, #1DA1F2 100%);">
-                <img src="assets/santamonica.png" alt="Sitio web Santa Monica Chile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div class="card__overlay" aria-hidden="true">
-                <a href="https://sm-em.com/" class="card__link" target="_blank" rel="noopener noreferrer">
-                  <span>Ver proyecto</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__content">
-              <span class="card__type">Sitio Web Corporativo</span>
-              <h3 class="card__title" id="project-3-title">Santa Monica Chile</h3>
-              <p class="card__text">Catálogo digital para imprenta que muestra servicios y facilita cotizaciones.</p>
-            </div>
-          </article>
-
-        
-
-          <a href="#" class="portfolio__more">
-            <div class="portfolio__more-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </div>
-            <span class="portfolio__more-text">+ más proyectos</span>
-            <span class="portfolio__more-number">+5 proyectos</span>
+    <!-- ── Proyecto Destacado ── -->
+    <section class="featured-section reveal" aria-label="Proyecto destacado">
+      <p class="featured-section__label">&lt; proyecto destacado /&gt;</p>
+      <div class="featured-card reveal reveal--scale">
+        <div class="featured-card__img">
+          <picture>
+            <source srcset="assets/webp/santamonica.webp" type="image/webp">
+            <img src="assets/santamonica.png" alt="Santa Monica Chile" loading="lazy">
+          </picture>
+          <div class="featured-card__overlay">
+            <a href="https://sm-em.com/" target="_blank" rel="noopener" class="featured-card__visit">
+              Visitar sitio
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="featured-card__info">
+          <span class="featured-badge">⭐ Destacado</span>
+          <h2 class="featured-card__title">Santa Monica Chile</h2>
+          <p class="featured-card__desc">Web corporativa completa para empresa de maquinaria pesada. Catálogo de equipos, sección de contacto y optimización SEO para posicionar en el sector industrial.</p>
+          <div class="featured-card__tags">
+            <span class="tag">HTML/CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">SEO</span>
+            <span class="tag">Responsive</span>
+          </div>
+          <a href="https://sm-em.com/" target="_blank" rel="noopener" class="featured-card__link">
+            Ver proyecto en vivo →
           </a>
         </div>
       </div>
+    </section>
 
-      <!-- Landing Pages -->
-      <div class="portfolio__category">
-        <h3 class="portfolio__category-title">Landing Pages</h3>
-        <div class="portfolio__grid">
-<article class="card card--portfolio" data-category="negocios" aria-labelledby="project-1-title">
-            <div class="card__image-wrapper">
-              <div class="card__image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                <img src="assets/gallardo.png" alt="Landing para negocio local">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div class="card__overlay" aria-hidden="true">
-                <a href="https://gallardopropiedades.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
-                  <span>Ver proyecto</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__content">
-              <span class="card__type">Landing Page</span>
-              <h3 class="card__title" id="project-1-title">Propiedades Gallardo</h3>
-              <p class="card__text">Landing para corredora de propiedades enfocada en generar contactos de clientes interesados.</p>
-            </div>
-          </article>
-
-<article class="card card--portfolio" data-category="negocios" aria-labelledby="project-5-title">
-            <div class="card__image-wrapper">
-              <div class="card__image" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
-               <img src="assets/haus.png" alt="Landing para negocio local">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div class="card__overlay" aria-hidden="true">
-                <a href="https://www.hausandhaus.cl/Default.asp" class="card__link" target="_blank" rel="noopener noreferrer">
-                  <span>Ver proyecto</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__content">
-              <span class="card__type">Pagina Web</span>
-              <h3 class="card__title" id="project-5-title">HausBau.Cl</h3>
-              <p class="card__text">Portal inmobiliario para compradores y arrendatarios que buscan propiedades.</p>
-            </div>
-          </article>
-
-          <a href="#" class="portfolio__more">
-            <div class="portfolio__more-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </div>
-            <span class="portfolio__more-text">+ más proyectos</span>
-            <span class="portfolio__more-number">+3 proyectos</span>
-          </a>
-        </div>
+    <!-- ── Filtros ── -->
+    <section class="portfolio-filters-section">
+      <div class="portfolio-filters reveal" role="group" aria-label="Filtrar proyectos por tipo">
+        <button class="filter-btn is-active" data-filter="all">Todos <span class="filter-count">8</span></button>
+        <button class="filter-btn" data-filter="web">🌐 Web <span class="filter-count">6</span></button>
+        <button class="filter-btn" data-filter="tienda">🛒 Tienda <span class="filter-count">2</span></button>
+        <button class="filter-btn" data-filter="app" disabled>📱 App <span class="filter-soon">Pronto</span></button>
+        <button class="filter-btn" data-filter="sistema" disabled>⚙️ Sistema <span class="filter-soon">Pronto</span></button>
       </div>
+    </section>
 
-      <!-- Apps -->
-      <div class="portfolio__category">
-        <h3 class="portfolio__category-title">Apps</h3>
-        <div class="portfolio__grid">
-<article class="card card--portfolio" data-category="servicios" aria-labelledby="project-6-title">
-            <div class="card__image-wrapper">
-              <div class="card__image" style="background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div class="card__overlay" aria-hidden="true">
-                <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
-                  <span>Ver proyecto</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__content">
-              <span class="card__type">App Web Progresiva</span>
-              <h3 class="card__title" id="project-6-title">Sistema de Gestión</h3>
-              <p class="card__text">Sistema para talleres y negocios de servicios que organiza clientes, pedidos y tareas.</p>
-            </div>
-          </article>
+    <!-- ── Grid ── -->
+    <section class="portfolio-grid-section" aria-label="Todos los proyectos">
+      <div class="portfolio-grid" id="portfolioGrid">
 
-<article class="card card--portfolio" data-category="servicios" aria-labelledby="project-7-title">
-            <div class="card__image-wrapper">
-              <div class="card__image" style="background: linear-gradient(135deg, #C471ED 0%, #12C2E9 100%);">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div class="card__overlay" aria-hidden="true">
-                <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
-                  <span>Ver proyecto</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
+        <article class="project-card reveal reveal-delay-1" data-type="web">
+          <div class="project-card__img">
+            <picture>
+              <source srcset="assets/webp/gallardo.webp" type="image/webp">
+              <img src="assets/gallardo.png" alt="Propiedades Gallardo" loading="lazy">
+            </picture>
+            <span class="project-card__type type-web">Web</span>
+            <div class="project-card__overlay">
+              <a href="https://gallardopropiedades.cl/" target="_blank" rel="noopener" class="project-card__visit">
+                Ver sitio <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
             </div>
-            <div class="card__content">
-              <span class="card__type">App Web Progresiva</span>
-              <h3 class="card__title" id="project-7-title">Plataforma de Pedidos</h3>
-              <p class="card__text">App para restaurants y tiendas que recibe pedidos por WhatsApp y controla inventario.</p>
+          </div>
+          <div class="project-card__info">
+            <p class="project-card__name">Propiedades Gallardo</p>
+            <p class="project-card__desc">Landing inmobiliaria para compra, venta y arriendo de propiedades.</p>
+            <div class="project-card__tags">
+              <span class="tag">Landing Page</span><span class="tag">Inmobiliaria</span>
             </div>
-          </article>
+          </div>
+        </article>
 
-          <a href="#" class="portfolio__more">
-            <div class="portfolio__more-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+        <article class="project-card reveal reveal-delay-2" data-type="web">
+          <div class="project-card__img">
+            <picture>
+              <source srcset="assets/webp/haus.webp" type="image/webp">
+              <img src="assets/haus.png" alt="Haus & Haus" loading="lazy">
+            </picture>
+            <span class="project-card__type type-web">Web</span>
+            <div class="project-card__overlay">
+              <a href="https://www.hausandhaus.cl/Default.asp" target="_blank" rel="noopener" class="project-card__visit">
+                Ver sitio <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
             </div>
-            <span class="portfolio__more-text">+ más proyectos</span>
-            <span class="portfolio__more-number">+4 proyectos</span>
-          </a>
-        </div>
+          </div>
+          <div class="project-card__info">
+            <p class="project-card__name">Haus & Haus</p>
+            <p class="project-card__desc">Sitio web para corredora de propiedades con catálogo de inmuebles.</p>
+            <div class="project-card__tags">
+              <span class="tag">Corredora</span><span class="tag">Inmobiliaria</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-3" data-type="web">
+          <div class="project-card__img">
+            <picture>
+              <source srcset="assets/webp/santacruz.webp" type="image/webp">
+              <img src="assets/santacruz.png" alt="Colegio Santa Cruz" loading="lazy">
+            </picture>
+            <span class="project-card__type type-web">Web</span>
+            <div class="project-card__overlay">
+              <a href="https://www.colegiosantacruz.cl/" target="_blank" rel="noopener" class="project-card__visit">
+                Ver sitio <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <p class="project-card__name">Colegio Santa Cruz</p>
+            <p class="project-card__desc">Portal educativo institucional con admisión, noticias y calendario.</p>
+            <div class="project-card__tags">
+              <span class="tag">Educación</span><span class="tag">Institucional</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1" data-type="web">
+          <div class="project-card__img">
+            <picture>
+              <source srcset="assets/webp/joyas.webp" type="image/webp">
+              <img src="assets/joyas.png" alt="Novio Joyas" loading="lazy">
+            </picture>
+            <span class="project-card__type type-web">Web</span>
+            <div class="project-card__overlay">
+              <a href="https://noviojoyas.cl/" target="_blank" rel="noopener" class="project-card__visit">
+                Ver sitio <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <p class="project-card__name">Novio Joyas</p>
+            <p class="project-card__desc">Web de ventas especializada en anillos de compromiso y joyería fina.</p>
+            <div class="project-card__tags">
+              <span class="tag">Joyería</span><span class="tag">Ventas</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2" data-type="web">
+          <div class="project-card__img">
+            <picture>
+              <source srcset="assets/webp/daya.webp" type="image/webp">
+              <img src="assets/daya.png" alt="Fundación Dayacann" loading="lazy">
+            </picture>
+            <span class="project-card__type type-web">Web</span>
+            <div class="project-card__overlay">
+              <a href="https://fundaciondaya.org/" target="_blank" rel="noopener" class="project-card__visit">
+                Ver sitio <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <p class="project-card__name">Fundación Dayacann</p>
+            <p class="project-card__desc">Landing informativa para fundación sin fines de lucro con blog integrado.</p>
+            <div class="project-card__tags">
+              <span class="tag">ONG</span><span class="tag">Blog</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-3" data-type="tienda">
+          <div class="project-card__img">
+            <picture>
+              <source srcset="assets/webp/led.webp" type="image/webp">
+              <img src="assets/led.png" alt="Idelux" loading="lazy">
+            </picture>
+            <span class="project-card__type type-tienda">Tienda</span>
+            <div class="project-card__overlay">
+              <a href="https://idelux.cl/" target="_blank" rel="noopener" class="project-card__visit">
+                Ver sitio <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <p class="project-card__name">Idelux — Módulos LED</p>
+            <p class="project-card__desc">Ecommerce de venta y arriendo de módulos LED con carrito y pagos online.</p>
+            <div class="project-card__tags">
+              <span class="tag">Ecommerce</span><span class="tag">Pagos online</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1" data-type="tienda">
+          <div class="project-card__img">
+            <picture>
+              <source srcset="assets/webp/ropa.webp" type="image/webp">
+              <img src="assets/ropa.png" alt="Street Machine Chile" loading="lazy">
+            </picture>
+            <span class="project-card__type type-tienda">Tienda</span>
+            <div class="project-card__overlay">
+              <a href="https://www.streetmachine.cl/" target="_blank" rel="noopener" class="project-card__visit">
+                Ver sitio <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <p class="project-card__name">Street Machine Chile</p>
+            <p class="project-card__desc">Tienda virtual urbana de ropa, zapatillas y accesorios con catálogo completo.</p>
+            <div class="project-card__tags">
+              <span class="tag">Moda</span><span class="tag">Ecommerce</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="portfolio-empty" id="portfolioEmpty">Sin proyectos en esta categoría aún.</div>
+
       </div>
+    </section>
 
-      <!-- Ecommerce -->
-      <div class="portfolio__category">
-        <h3 class="portfolio__category-title">Ecommerce</h3>
-        <div class="portfolio__grid">
-<article class="card card--portfolio" data-category="ecommerce" aria-labelledby="project-8-title">
-            <div class="card__image-wrapper">
-              <div class="card__image" style="background: linear-gradient(135deg, #F7971E 0%, #FFD200 100%);">
-                <img src="assets/led.png" alt="Landing para negocio local">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div class="card__overlay" aria-hidden="true">
-                <a href="https://idelux.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
-                  <span>Ver proyecto</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__content">
-              <span class="card__type">Ecommerce</span>
-              <h3 class="card__title" id="project-8-title">Tienda de Modulos LED</h3>
-              <p class="card__text">Tienda online para organizadores de eventos que arriendan equipos LED e iluminación.</p>
-            </div>
-          </article>
+    <!-- ── CTA ── -->
+    <section class="portfolio-cta reveal">
+      <h2 class="portfolio-cta__title reveal reveal-delay-1">¿Tu negocio podría ser<br><span>el próximo?</span></h2>
+      <p class="portfolio-cta__text reveal reveal-delay-2">Cuéntanos tu idea y la convertimos en un proyecto que genera resultados reales.</p>
+      <a href="https://wa.me/56977770556?text=Hola%2C%20vi%20el%20portafolio%20y%20quiero%20hablar%20sobre%20mi%20proyecto"
+         class="portfolio-cta__btn reveal reveal-delay-3"
+         target="_blank" rel="noopener">
+        Hablemos por WhatsApp →
+      </a>
+    </section>
 
-<article class="card card--portfolio" data-category="ecommerce" aria-labelledby="project-9-title">
-            <div class="card__image-wrapper">
-              <div class="card__image" style="background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);">
-              <img src="assets/ropa.png" alt="Landing para negocio local">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="card__placeholder" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
-                </svg>
-              </div>
-              <div class="card__overlay" aria-hidden="true">
-                <a href="https://www.streetmachine.cl/" class="card__link" target="_blank" rel="noopener noreferrer">
-                  <span>Ver proyecto</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="card__content">
-              <span class="card__type">Tienda Virtual</span>
-              <h3 class="card__title" id="project-9-title">Street Machine Chile</h3>
-              <p class="card__text">Tienda online de ropa urbana para jóvenes que buscan zapatillas y accesorios de moda.</p>
-            </div>
-          </article>
+  </main>
 
-          <a href="#" class="portfolio__more">
-            <div class="portfolio__more-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </div>
-            <span class="portfolio__more-text">+ más proyectos</span>
-            <span class="portfolio__more-number">+3 proyectos</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="portfolio__counter">
-        <span class="portfolio__counter-number">+15</span>
-        <span>proyectos realizados</span>
-      </div>
-    </div>
-  </section>
-
-   <!-- Footer -->
+  <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="footer-container">
-      
-      <!-- Columna 1: Información de contacto -->
       <div class="footer-column">
         <h3 class="footer-column__title">Innova Team</h3>
         <address class="footer-column__address">
-          <p>Torre América de Mall Plaza América (Av. Einstein 290)  Rancagua, Chile.</p>
+          <p>Torre América de Mall Plaza América (Av. Einstein 290) Rancagua, Chile.</p>
           <p><a href="tel:+56977770556">+56 9 7777 0556</a></p>
           <p><a href="mailto:innova1team@gmail.com">innova1team@gmail.com</a></p>
         </address>
       </div>
-
-      <!-- Columna 2: Servicios -->
       <div class="footer-column">
         <h3 class="footer-column__title">Servicios</h3>
         <ul class="footer-column__list">
-          <li><a href="#">Desarrollo Web</a></li>
-          <li><a href="#">Tiendas Virtuales</a></li>
-          <li><a href="#">Sistema de Software</a></li>
-          <li><a href="#">Apps Móviles</a></li>
+          <li><a href="servicio-web.html">Desarrollo Web</a></li>
+          <li><a href="servicio-tienda.html">Tiendas Virtuales</a></li>
+          <li><a href="servicio-software.html">Sistema de Software</a></li>
+          <li><a href="servicio-app.html">Apps Móviles</a></li>
         </ul>
       </div>
-
-      <!-- Columna 3: Enlaces rápidos -->
       <div class="footer-column">
         <h3 class="footer-column__title">Enlaces Rápidos</h3>
         <ul class="footer-column__list">
           <li><a href="proyectos.html">Proyectos</a></li>
-          <li><a href="#about">Nosotros</a></li>
-          <li><a href="#planes">Precios</a></li>
-          <li><a href="#contact">Contacto</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="index.html#planes">Precios</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
         </ul>
       </div>
-
-      <!-- Columna 4: Descargar App -->
       <div class="footer-column footer-app">
         <h3 class="footer-column__title">Descargar App <p class="footer-column__address">(Próximamente)</p></h3>
-        
         <div class="footer-app__content">
           <div class="footer-qr">
-            <img src="assets/https_innovateam_netlify_app_.png" alt="Código QR para descargar app">
+            <picture>
+              <source srcset="assets/webp/https_innovateam_netlify_app_.webp" type="image/webp">
+              <img src="assets/https_innovateam_netlify_app_.png" alt="Código QR para descargar app">
+            </picture>
           </div>
           <div class="footer-stores">
             <a>
-              <img src="assets/apple.png" alt="Descargar en App Store">
+              <picture>
+                <source srcset="assets/webp/apple.webp" type="image/webp">
+                <img src="assets/apple.png" alt="Descargar en App Store">
+              </picture>
             </a>
             <a>
-              <img src="assets/playstore.png" alt="Descargar en Google Play">
+              <picture>
+                <source srcset="assets/webp/playstore.webp" type="image/webp">
+                <img src="assets/playstore.png" alt="Descargar en Google Play">
+              </picture>
             </a>
           </div>
         </div>
       </div>
-
     </div>
-
-    <!-- Fila inferior con copyright -->
     <div class="footer-bottom">
       <p>&copy; 2026 Innova Team. Todos los derechos reservados.</p>
     </div>
   </footer>
 
+  <!-- Chatbot (pega tu bloque completo aquí) -->
+
+  <!-- ── Burbuja flotante ── -->
+<div class="chat-bubble">
+  <div class="chat-bubble__tooltip" id="chatTooltip" onclick="toggleChat()">
+    <p>👋 ¡Hola! ¿Necesitas una <strong>web o app</strong> para tu negocio?</p>
+  </div>
+  <button class="chat-bubble__btn" id="chatBtn" onclick="toggleChat()" aria-label="Abrir chat">
+    <span class="chat-bubble__dot"></span>
+    <!-- Icono chat -->
+    <svg class="icon-chat" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+    </svg>
+    <!-- Icono cerrar -->
+    <svg class="icon-close" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+</div>
+
+<!-- ── Ventana del chat ── -->
+<div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat de soporte Innova Team">
+  <div class="chat-window__header">
+    <div class="chat-header__avatar">💻</div>
+    <div class="chat-header__info">
+      <p class="chat-header__name">Innova Team</p>
+      <p class="chat-header__status">En línea ahora</p>
+    </div>
+  </div>
+
+  <div class="chat-window__messages" id="chatMessages"></div>
+
+  <div class="chat-options" id="chatOptions"></div>
+
+  <div class="chat-window__footer">
+    <a id="waBtn" href="https://wa.me/56977770556?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" 
+       class="chat-wa-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.524 5.836L.057 23.625a.75.75 0 00.92.92l5.789-1.467A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.715 9.715 0 01-4.964-1.363l-.355-.211-3.686.935.951-3.585-.232-.369A9.718 9.718 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+      </svg>
+      Continuar en WhatsApp
+    </a>
+  </div>
+</div>
+
+<script>
+  // ── Configuración ──
+  const WA_NUMBER = '56977770556';
+  const AGENT_NAME = 'Innova Team';
+
+  const flows = {
+    start: {
+      msg: '¡Hola! 👋 Soy el asistente de Innova Team. ¿En qué puedo ayudarte hoy?',
+      options: [
+        { label: '🌐 Quiero una Página web',    next: 'web' },
+        { label: '🛒 Quiero una Tienda online', next: 'tienda' },
+        { label: '📱 Quiero una App móvil',     next: 'app' },
+        { label: '⚙️ Quiero un Sistema de Software', next: 'software' },
+      ]
+    },
+    web: {
+      msg: '¡Genial! Una web profesional es el primer paso  ¿Qué tipo de negocio tienes?',
+      options: [
+        { label: '🏢 Empresa / Servicios', next: 'cotizar' },
+        { label: '🏫 Colegio / Institución', next: 'cotizar' },
+        { label: '🏠 Inmobiliaria',         next: 'cotizar' },
+        { label: '🍽 Restaurante / Local',   next: 'cotizar' },
+      ]
+    },
+    tienda: {
+      msg: '¡Perfecto! Con tu tienda online vendes las 24 horas 🛒 ¿Cuántos productos tienes aproximadamente?',
+      options: [
+        { label: 'Menos de 50',    next: 'cotizar' },
+        { label: 'Entre 50-200',   next: 'cotizar' },
+        { label: 'Más de 200',     next: 'cotizar' },
+      ]
+    },
+    app: {
+      msg: '¡Las apps abren un mundo de posibilidades! 📱 ¿Para qué plataforma la necesitas?',
+      options: [
+        { label: '🍎 Solo iOS',         next: 'cotizar' },
+        { label: '🤖 Solo Android',     next: 'cotizar' },
+        { label: '📲 iOS y Android',    next: 'cotizar' },
+      ]
+    },
+    software: {
+  msg: '¡Perfecto! Un sistema a medida centraliza tu negocio 🖥️ ¿Qué necesitas gestionar?',
+  options: [
+    { label: '📦 Inventario / Ventas',     next: 'cotizar' },
+    { label: '👥 Clientes / CRM',          next: 'cotizar' },
+    { label: '📊 Reportes / Dashboard',    next: 'cotizar' },
+    { label: '🔧 Algo más específico',     next: 'cotizar' },
+  ]
+},
+    cotizar: {
+      msg: '¡Excelente! 🎉 Te conectaré con nuestro equipo ahora mismo. Haz clic en el botón de abajo para continuar por WhatsApp.',
+      options: []
+    }
+  };
+
+  let chatOpen = false;
+  let started = false;
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    const win = document.getElementById('chatWindow');
+    const btn = document.getElementById('chatBtn');
+    const tooltip = document.getElementById('chatTooltip');
+
+    win.classList.toggle('is-open', chatOpen);
+    btn.classList.toggle('is-open', chatOpen);
+
+    if (chatOpen) {
+      tooltip.style.display = 'none';
+      if (!started) { started = true; startFlow('start'); }
+    }
+  }
+
+  function getTime() {
+    return new Date().toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function addMessage(text, type = 'bot', delay = 0) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        const msgs = document.getElementById('chatMessages');
+
+        if (type === 'bot') {
+          // typing indicator
+          const typing = document.createElement('div');
+          typing.className = 'typing';
+          typing.innerHTML = '<span></span><span></span><span></span>';
+          msgs.appendChild(typing);
+          msgs.scrollTop = msgs.scrollHeight;
+
+          setTimeout(() => {
+            typing.remove();
+            const el = document.createElement('div');
+            el.className = 'msg msg--bot';
+            el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
+            msgs.appendChild(el);
+            msgs.scrollTop = msgs.scrollHeight;
+            resolve();
+          }, 900);
+        } else {
+          const el = document.createElement('div');
+          el.className = 'msg msg--user';
+          el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
+          msgs.appendChild(el);
+          msgs.scrollTop = msgs.scrollHeight;
+          resolve();
+        }
+      }, delay);
+    });
+  }
+
+  function showOptions(options) {
+    const container = document.getElementById('chatOptions');
+    container.innerHTML = '';
+    options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'chat-option';
+      btn.textContent = opt.label;
+      btn.onclick = () => selectOption(opt);
+      container.appendChild(btn);
+    });
+  }
+
+  async function startFlow(key) {
+    const step = flows[key];
+    if (!step) return;
+
+    // Actualizar botón WhatsApp con contexto si es cotizar
+    if (key === 'cotizar') {
+      const waBtn = document.getElementById('waBtn');
+      waBtn.href = `https://wa.me/${WA_NUMBER}?text=Hola%2C%20vengo%20del%20chat%20de%20su%20web%20y%20quiero%20cotizar%20un%20proyecto`;
+    }
+
+    showOptions([]);
+    await addMessage(step.msg, 'bot', 300);
+    if (step.options.length > 0) showOptions(step.options);
+  }
+
+  async function selectOption(opt) {
+    showOptions([]);
+    await addMessage(opt.label, 'user');
+    await startFlow(opt.next);
+  }
+</script>
+
+  <script>
+    /* ============================================
+       INTERSECTION OBSERVER — Scroll Reveal
+       ============================================ */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ============================================
+       CONTADOR ANIMADO — hero
+       ============================================ */
+    function animateCounter(el, target, duration = 1200) {
+      let start = 0;
+      const step = Math.ceil(target / (duration / 16));
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= target) { el.textContent = '+' + target; clearInterval(timer); }
+        else { el.textContent = '+' + start; }
+      }, 16);
+    }
+
+    const counterEl = document.getElementById('counterProjects');
+    const counterObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounter(counterEl, 150);
+        counterObserver.disconnect();
+      }
+    }, { threshold: 0.5 });
+    counterObserver.observe(counterEl);
+
+    /* ============================================
+       FILTROS
+       ============================================ */
+    const filterBtns = document.querySelectorAll('.filter-btn:not(:disabled)');
+    const cards      = document.querySelectorAll('.project-card');
+    const emptyEl    = document.getElementById('portfolioEmpty');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        let visible = 0;
+        cards.forEach(card => {
+          const match = filter === 'all' || card.dataset.type === filter;
+          card.classList.toggle('is-hidden', !match);
+          if (match) {
+            // Re-trigger reveal animation
+            card.classList.remove('is-visible');
+            card.style.transitionDelay = `${visible * 0.07}s`;
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => card.classList.add('is-visible'));
+            });
+            visible++;
+          }
+        });
+        emptyEl.classList.toggle('is-visible', visible === 0);
+      });
+    });
+  </script>
 
 </body>
 </html>
