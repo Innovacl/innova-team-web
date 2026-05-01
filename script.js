@@ -169,28 +169,7 @@ function closeMockup(e) {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMockup(); });
 
-<script>
-(function() {
-  const tabs   = document.querySelectorAll('.cases-tab');
-  const panels = document.querySelectorAll('.cases-panel');
- 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
- 
-      // Tabs
-      tabs.forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
-      tab.classList.add('is-active');
-      tab.setAttribute('aria-selected','true');
- 
-      // Panels
-      panels.forEach(p => p.classList.remove('is-active'));
-      const panel = document.getElementById('panel-' + target);
-      if (panel) panel.classList.add('is-active');
-    });
-  });
-})();
-</script>
+
 
 /* ============================================
    1. INTERSECTION OBSERVER — Scroll Reveal
@@ -298,48 +277,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMockup(
   });
 })();
  
-/* ============================================
-   5. CURSOR PERSONALIZADO (sutil)
-   Un punto que sigue al cursor en desktop
-   ============================================ */
-(function initCursor() {
-  // Solo en desktop
-  if (window.matchMedia('(pointer: coarse)').matches) return;
- 
-  const cursor = document.createElement('div');
-  cursor.id    = 'innova-cursor';
-  cursor.innerHTML = '<div class="cursor-dot"></div><div class="cursor-ring"></div>';
-  document.body.appendChild(cursor);
- 
-  let mx = 0, my = 0, cx = 0, cy = 0;
- 
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-    cursor.style.opacity = '1';
-  });
- 
-  document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-  });
- 
-  // Hover en links y botones — agranda el ring
-  document.querySelectorAll('a, button, [data-cursor-grow]').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
-  });
- 
-  // Smooth follow con lerp
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function loop() {
-    cx = lerp(cx, mx, 0.12);
-    cy = lerp(cy, my, 0.12);
-    cursor.style.left = cx + 'px';
-    cursor.style.top  = cy + 'px';
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
+
  
 /* ============================================
    6. PARALLAX SUAVE en glows del hero

@@ -161,8 +161,8 @@
   <!-- Servicios -->
   <section class="services" aria-label="Nuestros servicios">
     <div class="container">
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <div class="services__grid">
+      <h2 class="section-title" data-reveal>Nuestros Servicios</h2>
+      <div class="services__grid" data-stagger="0.12">
         <article class="card card--service" aria-labelledby="service-web-title">
           <div class="card__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -258,10 +258,10 @@
   <!-- Planes y Servicios -->
   <section class="pricing" id="planes" aria-label="Planes y Servicios">
     <div class="container">
-      <h2 class="section-title">Planes y Servicios</h2>
+      <h2 class="section-title" data-reveal>Planes y Servicios</h2>
       <p class="pricing__subtitle">Elige el plan ideal para tu negocio</p>
       
-      <div class="pricing__grid">
+      <div class="pricing__grid" data-stagger="0.15">
         <!-- Starter -->
         <article class="pricing-card" aria-labelledby="plan-starter-title">
           <h3 class="pricing-card__title" id="plan-starter-title">Starter</h3>
@@ -387,84 +387,96 @@
   
 <section class="services" aria-label="Portafolio destacado">
   <div class="container">
-    <h2 class="section-title">Nuestro Portafolio</h2>
+    <h2 class="section-title" data-reveal>Nuestro Portafolio</h2>
+    <div class="services__grid" data-stagger="0.12" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr));">
 
-    <div class="services__grid" style="grid-template-columns: repeat(auto-fill, minmax(300px,1fr));">
-
-      <article class="card card--service" style="padding:0; overflow:hidden; text-align:left;">
-        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
-          <picture>
-            <source srcset="assets/webp/santamonica.webp" type="image/webp">
-            <img src="assets/santamonica.png" alt="Santa Monica Chile"
-                 style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
-                 onmouseenter="this.style.objectPosition='bottom'"
-                 onmouseleave="this.style.objectPosition='top'"
-                 loading="lazy">
-          </picture>
+      <article class="card card--service" style="padding:0;overflow:hidden;text-align:left;cursor:pointer;"
+               onclick="openMockup('https://sm-em.com/','Santa Monica Chile','assets/santamonica.png')">
+        <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+          <img src="assets/santamonica.png" alt="Santa Monica Chile"
+               style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
+               onmouseenter="this.style.objectPosition='bottom'"
+               onmouseleave="this.style.objectPosition='top'" loading="lazy">
           <span style="position:absolute;top:10px;left:10px;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:9999px;background:rgba(102,126,234,.25);color:#a5b4fc;border:1px solid rgba(102,126,234,.3);text-transform:uppercase;letter-spacing:.05em;backdrop-filter:blur(8px);">Web</span>
         </div>
         <div style="padding:14px 16px 18px;">
           <p style="font-weight:700;color:#fff;font-size:.95rem;margin-bottom:4px;">Santa Monica Chile</p>
           <p style="font-size:.78rem;color:rgba(240,240,240,.45);line-height:1.55;margin-bottom:10px;">Web corporativa con catálogo de maquinaria pesada — camiones y tractores.</p>
-          <a href="https://sm-em.com/" target="_blank" rel="noopener"
-             style="font-size:.8rem;font-weight:700;color:#00E6A8;text-decoration:none;">Ver proyecto →</a>
+          <span style="font-size:.8rem;font-weight:700;color:#00E6A8;">Ver proyecto →</span>
         </div>
       </article>
 
-      <article class="card card--service" style="padding:0; overflow:hidden; text-align:left;">
-        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
-          <picture>
-            <source srcset="assets/webp/santacruz.webp" type="image/webp">
-            <img src="assets/santacruz.png" alt="Colegio Santa Cruz"
-                 style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
-                 onmouseenter="this.style.objectPosition='bottom'"
-                 onmouseleave="this.style.objectPosition='top'"
-                 loading="lazy">
-          </picture>
+      <article class="card card--service" style="padding:0;overflow:hidden;text-align:left;cursor:pointer;"
+               onclick="openMockup('https://www.colegiosantacruz.cl/','Colegio Santa Cruz','assets/santacruz.png')">
+        <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+          <img src="assets/santacruz.png" alt="Colegio Santa Cruz"
+               style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
+               onmouseenter="this.style.objectPosition='bottom'"
+               onmouseleave="this.style.objectPosition='top'" loading="lazy">
           <span style="position:absolute;top:10px;left:10px;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:9999px;background:rgba(102,126,234,.25);color:#a5b4fc;border:1px solid rgba(102,126,234,.3);text-transform:uppercase;letter-spacing:.05em;backdrop-filter:blur(8px);">Web</span>
         </div>
         <div style="padding:14px 16px 18px;">
           <p style="font-weight:700;color:#fff;font-size:.95rem;margin-bottom:4px;">Colegio Santa Cruz</p>
           <p style="font-size:.78rem;color:rgba(240,240,240,.45);line-height:1.55;margin-bottom:10px;">Portal educativo institucional con admisión, noticias y calendario académico.</p>
-          <a href="https://www.colegiosantacruz.cl/" target="_blank" rel="noopener"
-             style="font-size:.8rem;font-weight:700;color:#00E6A8;text-decoration:none;">Ver proyecto →</a>
+          <span style="font-size:.8rem;font-weight:700;color:#00E6A8;">Ver proyecto →</span>
         </div>
       </article>
 
-      <article class="card card--service" style="padding:0; overflow:hidden; text-align:left;">
-        <div style="position:relative; aspect-ratio:16/9; overflow:hidden;">
-          <picture>
-            <source srcset="assets/webp/ropa.webp" type="image/webp">
-            <img src="assets/ropa.png" alt="Street Machine Chile"
-                 style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
-                 onmouseenter="this.style.objectPosition='bottom'"
-                 onmouseleave="this.style.objectPosition='top'"
-                 loading="lazy">
-          </picture>
+      <article class="card card--service" style="padding:0;overflow:hidden;text-align:left;cursor:pointer;"
+               onclick="openMockup('https://www.streetmachine.cl/','Street Machine Chile','assets/ropa.png')">
+        <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+          <img src="assets/ropa.png" alt="Street Machine Chile"
+               style="width:100%;height:100%;object-fit:cover;object-position:top;transition:object-position 2.5s ease;"
+               onmouseenter="this.style.objectPosition='bottom'"
+               onmouseleave="this.style.objectPosition='top'" loading="lazy">
           <span style="position:absolute;top:10px;left:10px;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:9999px;background:rgba(0,230,168,.2);color:#00E6A8;border:1px solid rgba(0,230,168,.3);text-transform:uppercase;letter-spacing:.05em;backdrop-filter:blur(8px);">Tienda</span>
         </div>
         <div style="padding:14px 16px 18px;">
           <p style="font-weight:700;color:#fff;font-size:.95rem;margin-bottom:4px;">Street Machine Chile</p>
           <p style="font-size:.78rem;color:rgba(240,240,240,.45);line-height:1.55;margin-bottom:10px;">Tienda virtual urbana de ropa, zapatillas y accesorios con catálogo completo.</p>
-          <a href="https://www.streetmachine.cl/" target="_blank" rel="noopener"
-             style="font-size:.8rem;font-weight:700;color:#00E6A8;text-decoration:none;">Ver proyecto →</a>
+          <span style="font-size:.8rem;font-weight:700;color:#00E6A8;">Ver proyecto →</span>
         </div>
       </article>
 
     </div>
-
-    <!-- CTA ver todos -->
     <div style="text-align:center;margin-top:2.5rem;">
-      <a href="proyectos.html"
-         style="display:inline-flex;align-items:center;gap:8px;padding:.875rem 2rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:9999px;color:#fff;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .25s ease;"
+      <a href="proyectos.html" style="display:inline-flex;align-items:center;gap:8px;padding:.875rem 2rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:9999px;color:#fff;font-size:.9rem;font-weight:600;text-decoration:none;"
          onmouseenter="this.style.background='rgba(102,126,234,.12)';this.style.borderColor='rgba(102,126,234,.35)'"
          onmouseleave="this.style.background='rgba(255,255,255,.05)';this.style.borderColor='rgba(255,255,255,.12)'">
         Ver todos los proyectos →
       </a>
     </div>
-
   </div>
 </section>
+
+<!-- MODAL MOCKUP -->
+<div id="mockupModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1rem;" onclick="closeMockup(event)">
+  <div style="background:#0e0e16;border:1px solid rgba(102,126,234,.25);border-radius:20px;overflow:hidden;width:100%;max-width:900px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 32px 80px rgba(0,0,0,.7);" onclick="event.stopPropagation()">
+    <!-- Barra superior tipo browser -->
+    <div style="display:flex;align-items:center;gap:10px;padding:12px 18px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;">
+      <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57;cursor:pointer;" onclick="closeMockup()"></span>
+      <span style="width:12px;height:12px;border-radius:50%;background:#febc2e;"></span>
+      <span style="width:12px;height:12px;border-radius:50%;background:#28c840;"></span>
+      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:6px;padding:5px 12px;margin:0 12px;">
+        <span id="mockupUrl" style="font-family:'JetBrains Mono',monospace;font-size:.7rem;color:rgba(255,255,255,.4);"></span>
+      </div>
+      <a id="mockupExternalLink" href="#" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:5px;padding:5px 12px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:8px;font-size:.75rem;font-weight:700;text-decoration:none;white-space:nowrap;">
+        Abrir sitio ↗
+      </a>
+      <button onclick="closeMockup()" style="background:none;border:none;color:rgba(255,255,255,.4);font-size:1.25rem;cursor:pointer;line-height:1;padding:0 4px;">✕</button>
+    </div>
+    <!-- Preview screenshot -->
+    <div style="overflow-y:auto;flex:1;">
+      <img id="mockupImg" src="" alt="" style="width:100%;display:block;">
+    </div>
+    <!-- Footer modal -->
+    <div style="padding:12px 18px;background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;">
+      <p id="mockupTitle" style="font-size:.85rem;font-weight:700;color:#fff;margin:0;"></p>
+      <span style="font-size:.75rem;color:rgba(255,255,255,.3);">Desarrollado por Innova Team</span>
+    </div>
+  </div>
+</div>
 
   <!-- CTA
   <section class="cta" aria-label="Llamado a la acción">
@@ -480,7 +492,7 @@
 
  <!-- SECCIÓN FAQ — -->
 <section class="faq" id="faq" aria-label="Preguntas frecuentes">
-  <div class="faq__header">
+  <div class="faq__header" data-reveal>
     <div class="faq__badge">
       <span class="faq__badge-dot" aria-hidden="true"></span>
       &lt; Preguntas Frecuentes /&gt;
@@ -489,7 +501,7 @@
     <p class="faq__subtitle">Resolvemos las dudas más comunes para que puedas tomar una decisión con total confianza.</p>
   </div>
 
-  <div class="faq__list" id="faqList">
+  <div class="faq__list" id="faqList" data-stagger="0.08">
 
     <!-- Item 1 -->
     <div class="faq__item">
@@ -615,7 +627,7 @@
   <section class="contact" id="contacto" aria-label="Contacto">
     <div class="container">
        <div class="contact__wrapper">
-         <h2 class="section-title">¿Tienes algún proyecto en mente? Hablemos!</h2>
+         <h2 class="section-title" data-reveal >¿Tienes algún proyecto en mente? Hablemos!</h2>
          
          <p class="contact__description">Cuéntame tu idea para transformarla en una plataforma web y aplicación móvil de alto rendimiento. Rellena este formulario para solicitar un presupuesto y una estimación personalizada a tu proyecto.</p>
          
@@ -704,10 +716,10 @@
       <div class="footer-column">
         <h3 class="footer-column__title">Servicios</h3>
         <ul class="footer-column__list">
-          <li><a href="#">Desarrollo Web</a></li>
-          <li><a href="#">Tiendas Virtuales</a></li>
-          <li><a href="#">Sistema de Software</a></li>
-          <li><a href="#">Apps Móviles</a></li>
+          <li><a href="servicio-web.html">Desarrollo Web</a></li>
+          <li><a href="servicio-tienda.html">Tiendas Virtuales</a></li>
+          <li><a href="servicio-software.html">Sistema de Software</a></li>
+          <li><a href="servicio-app.html">Apps Móviles</a></li>
         </ul>
       </div>
 
