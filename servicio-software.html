@@ -384,10 +384,7 @@
       <div class="service-hero__glow service-hero__glow--1" aria-hidden="true"></div>
       <div class="service-hero__glow service-hero__glow--2" aria-hidden="true"></div>
       <div class="service-hero__content">
-        <div class="service-hero__badge">
-          <span class="service-hero__badge-dot" aria-hidden="true"></span>
-          &lt; sistema de software /&gt;
-        </div>
+        
         <div class="service-hero__icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17.25 6.75L22.5 12l-5.25 5.25"/>
@@ -486,7 +483,7 @@
   <div class="cases-tabs" role="tablist" aria-label="Industrias">
     <button class="cases-tab is-active" data-tab="clinica" role="tab" aria-selected="true">🏥 Clínica / Salud</button>
     <button class="cases-tab" data-tab="restaurante" role="tab" aria-selected="false">🍽 Restaurante</button>
-    <button class="cases-tab" data-tab="inventario" role="tab" aria-selected="false">📦 Inventario</button>
+    <button class="cases-tab" data-tab="bienestar" role="tab" aria-selected="false">🌿 Bienestar </button>
     <button class="cases-tab" data-tab="inmobiliaria" role="tab" aria-selected="false">🏠 Inmobiliaria</button>
     <button class="cases-tab" data-tab="educacion" role="tab" aria-selected="false">🎓 Educación</button>
   </div>
@@ -545,221 +542,238 @@
     </div>
   </div>
  
-  <!-- Panel: Restaurante -->
-  <div class="cases-panel" id="panel-restaurante" role="tabpanel">
-    <div class="case-main">
-      <span class="case-main__industry">🍽 Restaurantes & Locales</span>
-      <h3 class="case-main__title">Sistema de pedidos, mesas y cocina para restaurantes con app para meseros</h3>
-      <p class="case-main__desc">Digitaliza la toma de pedidos desde la mesa, el flujo de cocina y el cierre de caja en un sistema que habla entre sí. Tus meseros toman el pedido desde el celular, cocina lo recibe en tiempo real y caja registra el cobro automáticamente.</p>
-      <ul class="case-main__modules">
-        <li>App para meseros (toma de pedidos desde celular)</li>
-        <li>Panel de cocina en pantalla con estado de pedidos</li>
-        <li>Gestión de mesas y reservas online</li>
-        <li>Menú digital con QR actualizable</li>
-        <li>Cierre de caja diario y reportes de ventas</li>
-        <li>Control de inventario y alertas de stock bajo</li>
-      </ul>
+ <!-- ── Panel: Restaurante ── -->
+<div class="cases-panel" id="panel-restaurante" role="tabpanel">
+  <div class="case-main">
+    <span class="case-main__industry">🍽 Restaurantes & Locales</span>
+    <h3 class="case-main__title">Sistema integral para restaurantes que automatiza pedidos, caja y delivery en tiempo real</h3>
+    <p class="case-main__desc">
+      Olvídate del papel y los errores humanos. Nuestro sistema conecta la sala, la cocina y la caja en un flujo automático — desde que el cliente pide hasta que paga. Optimiza cada proceso clave, mejora la eficiencia operativa y eleva la experiencia de tu cliente en cada visita.
+    </p>
+    <ul class="case-main__modules">
+      <li>App para meseros — toma de pedidos desde celular en tiempo real</li>
+      <li>Panel de cocina con estado de pedidos actualizado al instante</li>
+      <li>Módulo de delivery con seguimiento y asignación de repartidores</li>
+      <li>Punto de venta (POS) con cierre de caja automático</li>
+      <li>Menú digital con QR actualizable sin costo adicional</li>
+      <li>Reportes de ventas, productos más vendidos y horarios pico</li>
+      <li>Control de inventario con alertas de stock bajo automáticas</li>
+    </ul>
+  </div>
+  <div class="case-side">
+    <div class="case-metrics">
+      <p class="case-metrics__title">Impacto estimado</p>
+      <div class="case-metrics__grid">
+        <div class="metric-item">
+          <div class="metric-item__value">-60%</div>
+          <div class="metric-item__label">Errores en pedidos</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">+35%</div>
+          <div class="metric-item__label">Velocidad de atención</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">-30%</div>
+          <div class="metric-item__label">Merma de inventario</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">100%</div>
+          <div class="metric-item__label">Trazabilidad de pedidos</div>
+        </div>
+      </div>
     </div>
-    <div class="case-side">
-      <div class="case-metrics">
-        <p class="case-metrics__title">Impacto estimado</p>
-        <div class="case-metrics__grid">
-          <div class="metric-item">
-            <div class="metric-item__value">-50%</div>
-            <div class="metric-item__label">Errores en pedidos</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">+30%</div>
-            <div class="metric-item__label">Velocidad de atención</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">-25%</div>
-            <div class="metric-item__label">Merma de inventario</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">100%</div>
-            <div class="metric-item__label">Trazabilidad de pedidos</div>
-          </div>
-        </div>
+    <div class="case-stack">
+      <p class="case-stack__title">Tecnologías</p>
+      <div class="case-stack__tags">
+        <span class="stack-tag">React Native</span>
+        <span class="stack-tag">Node.js</span>
+        <span class="stack-tag">WebSockets</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">QR API</span>
+        <span class="stack-tag">Maps API</span>
       </div>
-      <div class="case-stack">
-        <p class="case-stack__title">Tecnologías</p>
-        <div class="case-stack__tags">
-          <span class="stack-tag">React Native</span>
-          <span class="stack-tag">Node.js</span>
-          <span class="stack-tag">WebSockets</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">QR API</span>
-        </div>
-      </div>
-      <div class="case-cta">
-        <p>¿Tienes un restaurante o local?</p>
-        <a href="https://wa.me/56977770556?text=Hola%2C%20necesito%20un%20sistema%20para%20mi%20restaurante" target="_blank" rel="noopener">Cotizar →</a>
-      </div>
+    </div>
+    <div class="case-cta">
+      <p>¿Tienes un restaurante o local gastronómico?</p>
+      <a href="https://wa.me/56977770556?text=Hola%2C%20necesito%20un%20sistema%20para%20mi%20restaurante" target="_blank" rel="noopener">Cotizar →</a>
     </div>
   </div>
+</div>
  
-  <!-- Panel: Inventario -->
-  <div class="cases-panel" id="panel-inventario" role="tabpanel">
-    <div class="case-main">
-      <span class="case-main__industry">📦 Inventario & Ventas</span>
-      <h3 class="case-main__title">Sistema de inventario y punto de venta para tiendas y distribuidoras</h3>
-      <p class="case-main__desc">Controla tu stock en tiempo real, genera facturas y boletas, gestiona proveedores y visualiza tus productos más rentables desde un dashboard claro. Ideal para tiendas físicas, distribuidoras y empresas con múltiples bodegas.</p>
-      <ul class="case-main__modules">
-        <li>Control de stock con alertas de quiebre automático</li>
-        <li>Punto de venta (POS) con emisión de boletas y facturas</li>
-        <li>Gestión de proveedores y órdenes de compra</li>
-        <li>Múltiples bodegas o sucursales</li>
-        <li>Código de barras y QR para productos</li>
-        <li>Dashboard de productos más vendidos y rentabilidad</li>
-      </ul>
+ <!-- ── Panel: Bienestar ── -->
+<div class="cases-panel" id="panel-bienestar" role="tabpanel">
+  <div class="case-main">
+    <span class="case-main__industry">🌿 Spa & Centros de Bienestar</span>
+    <h3 class="case-main__title">Sistema de gestión para spa y centros de estética que centraliza citas, ventas y equipo en un solo lugar</h3>
+    <p class="case-main__desc">
+      Gestiona todo tu centro de bienestar desde una sola plataforma. Tus clientes reservan en línea, tu equipo sabe qué tratamiento tiene cada uno, y tú controlas el inventario de productos y los ingresos del día — sin llamadas, sin papel, sin confusión.
+    </p>
+    <ul class="case-main__modules">
+      <li>Agenda online con reserva de citas por cliente y terapeuta</li>
+      <li>Confirmación automática por WhatsApp con recordatorio previo</li>
+      <li>Gestión del equipo — turnos, especialidades y comisiones por servicio</li>
+      <li>Inventario de productos con alertas de reposición automática</li>
+      <li>Punto de venta para servicios, paquetes y productos</li>
+      <li>Historial de cada cliente — tratamientos, productos usados y preferencias</li>
+      <li>Dashboard de ingresos diarios, semanales y por terapeuta</li>
+    </ul>
+  </div>
+  <div class="case-side">
+    <div class="case-metrics">
+      <p class="case-metrics__title">Impacto estimado</p>
+      <div class="case-metrics__grid">
+        <div class="metric-item">
+          <div class="metric-item__value">-80%</div>
+          <div class="metric-item__label">Citas perdidas</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">+40%</div>
+          <div class="metric-item__label">Retención de clientes</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">-50%</div>
+          <div class="metric-item__label">Tiempo en administración</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">24/7</div>
+          <div class="metric-item__label">Reservas online</div>
+        </div>
+      </div>
     </div>
-    <div class="case-side">
-      <div class="case-metrics">
-        <p class="case-metrics__title">Impacto estimado</p>
-        <div class="case-metrics__grid">
-          <div class="metric-item">
-            <div class="metric-item__value">-80%</div>
-            <div class="metric-item__label">Pérdidas por quiebre de stock</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">+60%</div>
-            <div class="metric-item__label">Velocidad de despacho</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">-90%</div>
-            <div class="metric-item__label">Errores de inventario manual</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">Real</div>
-            <div class="metric-item__label">Stock actualizado en tiempo real</div>
-          </div>
-        </div>
+    <div class="case-stack">
+      <p class="case-stack__title">Tecnologías</p>
+      <div class="case-stack__tags">
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Node.js</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">WhatsApp API</span>
+        <span class="stack-tag">Stripe</span>
+        <span class="stack-tag">Calendar API</span>
       </div>
-      <div class="case-stack">
-        <p class="case-stack__title">Tecnologías</p>
-        <div class="case-stack__tags">
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">Django</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">Barcode API</span>
-          <span class="stack-tag">PDF Generator</span>
-        </div>
-      </div>
-      <div class="case-cta">
-        <p>¿Tienes una tienda o distribuidora?</p>
-        <a href="https://wa.me/56977770556?text=Hola%2C%20necesito%20un%20sistema%20de%20inventario%20y%20ventas" target="_blank" rel="noopener">Cotizar →</a>
-      </div>
+    </div>
+    <div class="case-cta">
+      <p>¿Tienes un spa o centro de estética?</p>
+      <a href="https://wa.me/56977770556?text=Hola%2C%20necesito%20un%20sistema%20para%20mi%20spa%20o%20centro%20de%20bienestar" target="_blank" rel="noopener">Cotizar →</a>
     </div>
   </div>
+</div>
  
-  <!-- Panel: Inmobiliaria -->
-  <div class="cases-panel" id="panel-inmobiliaria" role="tabpanel">
-    <div class="case-main">
-      <span class="case-main__industry">🏠 Inmobiliaria & Propiedades</span>
-      <h3 class="case-main__title">CRM inmobiliario con gestión de propiedades, clientes y contratos digitales</h3>
-      <p class="case-main__desc">Administra tu cartera de propiedades, haz seguimiento a cada cliente potencial, genera contratos digitales y controla los arriendo con pagos y vencimientos automáticos. Todo en un sistema diseñado para corredores y empresas inmobiliarias.</p>
-      <ul class="case-main__modules">
-        <li>Cartera de propiedades con fotos, planos y estado</li>
-        <li>CRM para seguimiento de clientes y leads</li>
-        <li>Generación de contratos digitales con firma electrónica</li>
-        <li>Control de arriendos, pagos y vencimientos</li>
-        <li>Alertas automáticas de renovación y mora</li>
-        <li>Reportes de rentabilidad por propiedad</li>
-      </ul>
+ <!-- ── Panel: Inmobiliaria ── -->
+<div class="cases-panel" id="panel-inmobiliaria" role="tabpanel">
+  <div class="case-main">
+    <span class="case-main__industry">🏠 Inmobiliaria & Propiedades</span>
+    <h3 class="case-main__title">Plataforma inmobiliaria que revoluciona la gestión de propiedades, contratos y arriendos</h3>
+    <p class="case-main__desc">
+      Un CRM inmobiliario completo diseñado para corredores de propiedades y administradores que quieren dejar atrás las planillas y el papeleo. Automatiza contratos, gestiona arriendos, da seguimiento a clientes y toma decisiones con datos reales — todo desde una sola plataforma.
+    </p>
+    <ul class="case-main__modules">
+      <li>CRM con seguimiento completo de clientes, leads y visitas agendadas</li>
+      <li>Cartera de propiedades con fotos, planos, estado y disponibilidad</li>
+      <li>Generación automática de contratos digitales con firma electrónica</li>
+      <li>Control de arriendos, fechas de vencimiento y pagos por cobrar</li>
+      <li>Alertas automáticas de renovación de contrato y morosidad</li>
+      <li>Portal privado para propietarios con estado de su propiedad en tiempo real</li>
+      <li>Reportes de rentabilidad por propiedad y proyecciones de ingresos</li>
+    </ul>
+  </div>
+  <div class="case-side">
+    <div class="case-metrics">
+      <p class="case-metrics__title">Impacto estimado</p>
+      <div class="case-metrics__grid">
+        <div class="metric-item">
+          <div class="metric-item__value">-70%</div>
+          <div class="metric-item__label">Tiempo en papeleo</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">+50%</div>
+          <div class="metric-item__label">Cierre de negocios</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">0</div>
+          <div class="metric-item__label">Pagos perdidos</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">100%</div>
+          <div class="metric-item__label">Contratos digitales</div>
+        </div>
+      </div>
     </div>
-    <div class="case-side">
-      <div class="case-metrics">
-        <p class="case-metrics__title">Impacto estimado</p>
-        <div class="case-metrics__grid">
-          <div class="metric-item">
-            <div class="metric-item__value">-65%</div>
-            <div class="metric-item__label">Tiempo en papeleo</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">+45%</div>
-            <div class="metric-item__label">Cierre de negocios</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">0</div>
-            <div class="metric-item__label">Pagos perdidos</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">100%</div>
-            <div class="metric-item__label">Contratos digitales</div>
-          </div>
-        </div>
+    <div class="case-stack">
+      <p class="case-stack__title">Tecnologías</p>
+      <div class="case-stack__tags">
+        <span class="stack-tag">Node.js</span>
+        <span class="stack-tag">MongoDB</span>
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Firma electrónica</span>
+        <span class="stack-tag">WhatsApp API</span>
+        <span class="stack-tag">PDF Generator</span>
       </div>
-      <div class="case-stack">
-        <p class="case-stack__title">Tecnologías</p>
-        <div class="case-stack__tags">
-          <span class="stack-tag">Node.js</span>
-          <span class="stack-tag">MongoDB</span>
-          <span class="stack-tag">React</span>
-          <span class="stack-tag">DocuSign API</span>
-          <span class="stack-tag">Stripe</span>
-        </div>
-      </div>
-      <div class="case-cta">
-        <p>¿Tienes una corredora o inmobiliaria?</p>
-        <a href="https://wa.me/56977770556?text=Hola%2C%20necesito%20un%20CRM%20para%20mi%20inmobiliaria" target="_blank" rel="noopener">Cotizar →</a>
-      </div>
+    </div>
+    <div class="case-cta">
+      <p>¿Tienes una corredora o administradora de propiedades?</p>
+      <a href="https://wa.me/56977770556?text=Hola%2C%20necesito%20una%20plataforma%20para%20mi%20inmobiliaria" target="_blank" rel="noopener">Cotizar →</a>
     </div>
   </div>
+</div>
  
-  <!-- Panel: Educación -->
-  <div class="cases-panel" id="panel-educacion" role="tabpanel">
-    <div class="case-main">
-      <span class="case-main__industry">🎓 Educación & Academias</span>
-      <h3 class="case-main__title">Plataforma educativa con gestión de alumnos, cursos y pagos de mensualidades</h3>
-      <p class="case-main__desc">Digitaliza la gestión académica de tu colegio, academia o instituto. Controla asistencia, notas, comunicación con apoderados y cobros de mensualidades desde un solo sistema accesible para profesores, alumnos y administración.</p>
-      <ul class="case-main__modules">
-        <li>Registro de alumnos y apoderados</li>
-        <li>Control de asistencia digital por curso</li>
-        <li>Notas y calificaciones con libro de clases digital</li>
-        <li>Mensajería interna entre profesores y apoderados</li>
-        <li>Cobro de mensualidades con estado de pago</li>
-        <li>Calendario académico y agenda de eventos</li>
-      </ul>
+ 
+  <!-- ── Panel: Educación ── -->
+<div class="cases-panel" id="panel-educacion" role="tabpanel">
+  <div class="case-main">
+    <span class="case-main__industry">🎓 Academias, Institutos & Cursos Online</span>
+    <h3 class="case-main__title">Plataforma educativa a medida que gestiona, facilita y mejora la enseñanza desde cualquier lugar</h3>
+    <p class="case-main__desc">
+      Un sistema diseñado para que academias, institutos y creadores de cursos online puedan gestionar alumnos, contenidos y pagos sin complicaciones. Más tiempo para enseñar, menos tiempo en administración. Construimos la plataforma exacta que tu institución necesita — no una solución genérica.
+    </p>
+    <ul class="case-main__modules">
+      <li>Plataforma de cursos online con videos, materiales y evaluaciones</li>
+      <li>Registro y gestión completa de alumnos por curso o nivel</li>
+      <li>Control de asistencia digital y seguimiento de progreso por alumno</li>
+      <li>Sistema de pagos y mensualidades con estado de cuenta automático</li>
+      <li>Mensajería interna entre docentes, alumnos y administración</li>
+      <li>Certificados digitales automáticos al completar cursos</li>
+      <li>Dashboard para directivos con métricas de retención y rendimiento</li>
+    </ul>
+  </div>
+  <div class="case-side">
+    <div class="case-metrics">
+      <p class="case-metrics__title">Impacto estimado</p>
+      <div class="case-metrics__grid">
+        <div class="metric-item">
+          <div class="metric-item__value">-75%</div>
+          <div class="metric-item__label">Tiempo administrativo</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">+85%</div>
+          <div class="metric-item__label">Retención de alumnos</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">-60%</div>
+          <div class="metric-item__label">Morosidad en pagos</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-item__value">100%</div>
+          <div class="metric-item__label">Clases accesibles online</div>
+        </div>
+      </div>
     </div>
-    <div class="case-side">
-      <div class="case-metrics">
-        <p class="case-metrics__title">Impacto estimado</p>
-        <div class="case-metrics__grid">
-          <div class="metric-item">
-            <div class="metric-item__value">-75%</div>
-            <div class="metric-item__label">Tiempo administrativo</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">+90%</div>
-            <div class="metric-item__label">Comunicación con apoderados</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">-60%</div>
-            <div class="metric-item__label">Morosidad en pagos</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-item__value">100%</div>
-            <div class="metric-item__label">Asistencia digital</div>
-          </div>
-        </div>
+    <div class="case-stack">
+      <p class="case-stack__title">Tecnologías</p>
+      <div class="case-stack__tags">
+        <span class="stack-tag">Laravel</span>
+        <span class="stack-tag">Vue.js</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">AWS S3</span>
+        <span class="stack-tag">WhatsApp API</span>
+        <span class="stack-tag">PDF Certificates</span>
       </div>
-      <div class="case-stack">
-        <p class="case-stack__title">Tecnologías</p>
-        <div class="case-stack__tags">
-          <span class="stack-tag">Laravel</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">Vue.js</span>
-          <span class="stack-tag">WhatsApp API</span>
-          <span class="stack-tag">PDF Reports</span>
-        </div>
-      </div>
-      <div class="case-cta">
-        <p>¿Tienes un colegio o academia?</p>
-        <a href="https://wa.me/56977770556?text=Hola%2C%20necesito%20una%20plataforma%20educativa%20para%20mi%20institucion" target="_blank" rel="noopener">Cotizar →</a>
-      </div>
+    </div>
+    <div class="case-cta">
+      <p>¿Tienes una academia, instituto o cursos online?</p>
+      <a href="https://wa.me/56977770556?text=Hola%2C%20necesito%20una%20plataforma%20educativa%20para%20mi%20institucion" target="_blank" rel="noopener">Cotizar →</a>
     </div>
   </div>
+</div>
  
 </section>
 
@@ -843,6 +857,34 @@
     </div>
     <div class="footer-bottom"><p>&copy; 2026 Innova Team. Todos los derechos reservados.</p></div>
   </footer>
+<script>
+(function() {
+  const tabs   = document.querySelectorAll('.cases-tab');
+  const panels = document.querySelectorAll('.cases-panel');
 
+  // Inicializar estado correcto
+  tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+  panels.forEach(p => p.classList.remove('is-active'));
+  if (tabs[0]) tabs[0].setAttribute('aria-selected', 'true');
+  if (panels[0]) panels[0].classList.add('is-active');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+
+      tabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(p => p.classList.remove('is-active'));
+      const panel = document.getElementById('panel-' + target);
+      if (panel) panel.classList.add('is-active');
+    });
+  });
+})();
+</script>
 </body>
 </html>

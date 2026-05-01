@@ -95,7 +95,7 @@
   <!--<span>🇨🇱</span> Chile &nbsp;&amp;&nbsp; <span>🇻🇪 Venezuela</span>
 </p>-->
 
-      <p class="hero__description">Diseñamos experiencias digitales que convierten visitantes en clientes.</p>
+      <p class="hero__description">Desarrollamos soluciones digitales a medida — sitios web, tiendas virtuales, apps móviles y sistemas de software. Resultados en semanas, no meses.</p>
 <!-- Terminal — va antes de los botones -->
 <div class="hero__terminal" role="img" aria-label="Demostración animada del proceso de desarrollo">
   <div class="hero__terminal-bar">
@@ -258,7 +258,7 @@
   <!-- Planes y Servicios -->
   <section class="pricing" id="planes" aria-label="Planes y Servicios">
     <div class="container">
-      <h2 class="section-title" data-reveal>Planes y Servicios</h2>
+      <h2 class="section-title" data-reveal>Elige tu plan</h2>
       <p class="pricing__subtitle">Elige el plan ideal para tu negocio</p>
       
       <div class="pricing__grid" data-stagger="0.15">
@@ -816,147 +816,185 @@
 
 <script>
   // ── Configuración ──
-  const WA_NUMBER = '56977770556';
-  const AGENT_NAME = 'Innova Team';
-
-  const flows = {
-    start: {
-      msg: '¡Hola! 👋 Soy el asistente de Innova Team. ¿En qué puedo ayudarte hoy?',
-      options: [
-        { label: '🌐 Quiero una Página web',    next: 'web' },
-        { label: '🛒 Quiero una Tienda online', next: 'tienda' },
-        { label: '📱 Quiero una App móvil',     next: 'app' },
-        { label: '⚙️ Quiero un Sistema de Software', next: 'software' },
-      ]
-    },
-    web: {
-      msg: '¡Genial! Una web profesional es el primer paso  ¿Qué tipo de negocio tienes?',
-      options: [
-        { label: '🏢 Empresa / Servicios', next: 'cotizar' },
-        { label: '🏫 Colegio / Institución', next: 'cotizar' },
-        { label: '🏠 Inmobiliaria',         next: 'cotizar' },
-        { label: '🍽 Restaurante / Local',   next: 'cotizar' },
-      ]
-    },
-    tienda: {
-      msg: '¡Perfecto! Con tu tienda online vendes las 24 horas 🛒 ¿Cuántos productos tienes aproximadamente?',
-      options: [
-        { label: 'Menos de 50',    next: 'cotizar' },
-        { label: 'Entre 50-200',   next: 'cotizar' },
-        { label: 'Más de 200',     next: 'cotizar' },
-      ]
-    },
-    app: {
-      msg: '¡Las apps abren un mundo de posibilidades! 📱 ¿Para qué plataforma la necesitas?',
-      options: [
-        { label: '🍎 Solo iOS',         next: 'cotizar' },
-        { label: '🤖 Solo Android',     next: 'cotizar' },
-        { label: '📲 iOS y Android',    next: 'cotizar' },
-      ]
-    },
-    software: {
-  msg: '¡Perfecto! Un sistema a medida centraliza tu negocio 🖥️ ¿Qué necesitas gestionar?',
-  options: [
-    { label: '📦 Inventario / Ventas',     next: 'cotizar' },
-    { label: '👥 Clientes / CRM',          next: 'cotizar' },
-    { label: '📊 Reportes / Dashboard',    next: 'cotizar' },
-    { label: '🔧 Algo más específico',     next: 'cotizar' },
-  ]
-},
-    cotizar: {
-      msg: '¡Excelente! 🎉 Te conectaré con nuestro equipo ahora mismo. Haz clic en el botón de abajo para continuar por WhatsApp.',
-      options: []
-    }
-  };
-
-  let chatOpen = false;
-  let started = false;
-
-  function toggleChat() {
-    chatOpen = !chatOpen;
-    const win = document.getElementById('chatWindow');
-    const btn = document.getElementById('chatBtn');
-    const tooltip = document.getElementById('chatTooltip');
-
-    win.classList.toggle('is-open', chatOpen);
-    btn.classList.toggle('is-open', chatOpen);
-
-    if (chatOpen) {
-      tooltip.style.display = 'none';
-      if (!started) { started = true; startFlow('start'); }
-    }
+const WA_NUMBER  = '56977770556';
+ 
+// Almacena las respuestas del usuario para construir el mensaje
+const userChoices = {
+  servicio:    '',
+  detalle:     '',
+  presupuesto: ''
+};
+ 
+const flows = {
+  start: {
+    msg: '¡Hola! 👋 Soy el asistente de Innova Team. ¿En qué puedo ayudarte hoy?',
+    options: [
+      { label: '🌐 Quiero una Página web',           next: 'web',      choice: { key: 'servicio', val: 'Página web' } },
+      { label: '🛒 Quiero una Tienda online',         next: 'tienda',   choice: { key: 'servicio', val: 'Tienda online' } },
+      { label: '📱 Quiero una App móvil',             next: 'app',      choice: { key: 'servicio', val: 'App móvil' } },
+      { label: '⚙️ Quiero un Sistema de Software',   next: 'software', choice: { key: 'servicio', val: 'Sistema de software' } },
+    ]
+  },
+  web: {
+    msg: '¡Genial! Una web profesional es el primer paso 🚀 ¿Qué tipo de negocio tienes?',
+    options: [
+      { label: '🏢 Empresa / Servicios',  next: 'presupuesto', choice: { key: 'detalle', val: 'empresa o negocio de servicios' } },
+      { label: '🏫 Colegio / Institución',next: 'presupuesto', choice: { key: 'detalle', val: 'colegio o institución educativa' } },
+      { label: '🏠 Inmobiliaria',         next: 'presupuesto', choice: { key: 'detalle', val: 'inmobiliaria o corredora de propiedades' } },
+      { label: '🍽 Restaurante / Local',  next: 'presupuesto', choice: { key: 'detalle', val: 'restaurante o local gastronómico' } },
+    ]
+  },
+  tienda: {
+    msg: '¡Perfecto! Con tu tienda online vendes las 24 horas 🛒 ¿Cuántos productos tienes aproximadamente?',
+    options: [
+      { label: 'Menos de 50 productos',  next: 'presupuesto', choice: { key: 'detalle', val: 'menos de 50 productos' } },
+      { label: 'Entre 50 y 200',         next: 'presupuesto', choice: { key: 'detalle', val: 'entre 50 y 200 productos' } },
+      { label: 'Más de 200 productos',   next: 'presupuesto', choice: { key: 'detalle', val: 'más de 200 productos' } },
+    ]
+  },
+  app: {
+    msg: '¡Las apps abren un mundo de posibilidades! 📱 ¿Para qué plataforma la necesitas?',
+    options: [
+      { label: '🍎 Solo iOS',       next: 'presupuesto', choice: { key: 'detalle', val: 'iOS (iPhone)' } },
+      { label: '🤖 Solo Android',   next: 'presupuesto', choice: { key: 'detalle', val: 'Android' } },
+      { label: '📲 iOS y Android',  next: 'presupuesto', choice: { key: 'detalle', val: 'iOS y Android' } },
+    ]
+  },
+  software: {
+    msg: '¡Un sistema a medida centraliza tu negocio! 🖥️ ¿Qué necesitas gestionar?',
+    options: [
+      { label: '🏥 Clínica / Salud',        next: 'presupuesto', choice: { key: 'detalle', val: 'sistema para clínica o centro de salud' } },
+      { label: '🍽 Restaurante',             next: 'presupuesto', choice: { key: 'detalle', val: 'sistema para restaurante' } },
+      { label: '🏠 Inmobiliaria',            next: 'presupuesto', choice: { key: 'detalle', val: 'sistema inmobiliario' } },
+      { label: '🌿 Spa / Bienestar',         next: 'presupuesto', choice: { key: 'detalle', val: 'sistema para spa o centro de bienestar' } },
+      { label: '🎓 Academia / Educación',    next: 'presupuesto', choice: { key: 'detalle', val: 'plataforma educativa' } },
+      { label: '📦 Inventario / Ventas',     next: 'presupuesto', choice: { key: 'detalle', val: 'sistema de inventario y ventas' } },
+    ]
+  },
+  presupuesto: {
+    msg: '¡Casi listo! Una última pregunta para darte la mejor atención 💡 ¿Tienes un presupuesto aproximado en mente?',
+    options: [
+      { label: '💰 Menos de $300 USD',       next: 'cotizar', choice: { key: 'presupuesto', val: 'menos de $300 USD' } },
+      { label: '💰 Entre $300 y $600 USD',   next: 'cotizar', choice: { key: 'presupuesto', val: 'entre $300 y $600 USD' } },
+      { label: '💰 Entre $600 y $1.500 USD', next: 'cotizar', choice: { key: 'presupuesto', val: 'entre $600 y $1.500 USD' } },
+      { label: '💰 Más de $1.500 USD',       next: 'cotizar', choice: { key: 'presupuesto', val: 'más de $1.500 USD' } },
+      { label: '🤷 No lo sé aún',            next: 'cotizar', choice: { key: 'presupuesto', val: 'presupuesto por definir' } },
+    ]
+  },
+  cotizar: {
+    msg: '¡Perfecto! 🎉 Tengo todo lo que necesito. Te conectaré con nuestro equipo ahora mismo para darte una propuesta personalizada.',
+    options: []
   }
-
-  function getTime() {
-    return new Date().toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+};
+ 
+let chatOpen = false;
+let started  = false;
+ 
+// Construye el mensaje de WhatsApp dinámicamente con las respuestas del usuario
+function buildWaMessage() {
+  const s = userChoices.servicio    || 'un proyecto digital';
+  const d = userChoices.detalle     || '';
+  const p = userChoices.presupuesto || 'presupuesto por definir';
+ 
+  let msg = `Hola, vengo del chat de su web.%0A%0A`;
+  msg += ` *Resumen de mi consulta:*%0A`;
+  msg += `• Servicio: ${s}%0A`;
+  if (d) msg += `• Detalle: ${d}%0A`;
+  msg += `• Presupuesto estimado: ${p}%0A%0A`;
+  msg += `¡Quiero recibir una propuesta personalizada!`;
+ 
+  return `https://wa.me/${WA_NUMBER}?text=${msg}`;
+}
+ 
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const win     = document.getElementById('chatWindow');
+  const btn     = document.getElementById('chatBtn');
+  const tooltip = document.getElementById('chatTooltip');
+ 
+  win.classList.toggle('is-open', chatOpen);
+  btn.classList.toggle('is-open', chatOpen);
+ 
+  if (chatOpen) {
+    tooltip.style.display = 'none';
+    if (!started) { started = true; startFlow('start'); }
   }
-
-  function addMessage(text, type = 'bot', delay = 0) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        const msgs = document.getElementById('chatMessages');
-
-        if (type === 'bot') {
-          // typing indicator
-          const typing = document.createElement('div');
-          typing.className = 'typing';
-          typing.innerHTML = '<span></span><span></span><span></span>';
-          msgs.appendChild(typing);
-          msgs.scrollTop = msgs.scrollHeight;
-
-          setTimeout(() => {
-            typing.remove();
-            const el = document.createElement('div');
-            el.className = 'msg msg--bot';
-            el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
-            msgs.appendChild(el);
-            msgs.scrollTop = msgs.scrollHeight;
-            resolve();
-          }, 900);
-        } else {
+}
+ 
+function getTime() {
+  return new Date().toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+}
+ 
+function addMessage(text, type = 'bot', delay = 0) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      const msgs = document.getElementById('chatMessages');
+ 
+      if (type === 'bot') {
+        const typing = document.createElement('div');
+        typing.className = 'typing';
+        typing.innerHTML = '<span></span><span></span><span></span>';
+        msgs.appendChild(typing);
+        msgs.scrollTop = msgs.scrollHeight;
+ 
+        setTimeout(() => {
+          typing.remove();
           const el = document.createElement('div');
-          el.className = 'msg msg--user';
+          el.className = 'msg msg--bot';
           el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
           msgs.appendChild(el);
           msgs.scrollTop = msgs.scrollHeight;
           resolve();
-        }
-      }, delay);
-    });
+        }, 900);
+      } else {
+        const el = document.createElement('div');
+        el.className = 'msg msg--user';
+        el.innerHTML = `<div class="msg__bubble">${text}</div><div class="msg__time">${getTime()}</div>`;
+        msgs.appendChild(el);
+        msgs.scrollTop = msgs.scrollHeight;
+        resolve();
+      }
+    }, delay);
+  });
+}
+ 
+function showOptions(options) {
+  const container = document.getElementById('chatOptions');
+  container.innerHTML = '';
+  options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className   = 'chat-option';
+    btn.textContent = opt.label;
+    btn.onclick     = () => selectOption(opt);
+    container.appendChild(btn);
+  });
+}
+ 
+async function startFlow(key) {
+  const step = flows[key];
+  if (!step) return;
+ 
+  // Actualizar botón WhatsApp con mensaje dinámico cuando llegamos a cotizar
+  if (key === 'cotizar') {
+    const waBtn = document.getElementById('waBtn');
+    waBtn.href  = buildWaMessage();
   }
-
-  function showOptions(options) {
-    const container = document.getElementById('chatOptions');
-    container.innerHTML = '';
-    options.forEach(opt => {
-      const btn = document.createElement('button');
-      btn.className = 'chat-option';
-      btn.textContent = opt.label;
-      btn.onclick = () => selectOption(opt);
-      container.appendChild(btn);
-    });
+ 
+  showOptions([]);
+  await addMessage(step.msg, 'bot', 300);
+  if (step.options.length > 0) showOptions(step.options);
+}
+ 
+async function selectOption(opt) {
+  // Guardar la respuesta del usuario si tiene choice definido
+  if (opt.choice) {
+    userChoices[opt.choice.key] = opt.choice.val;
   }
-
-  async function startFlow(key) {
-    const step = flows[key];
-    if (!step) return;
-
-    // Actualizar botón WhatsApp con contexto si es cotizar
-    if (key === 'cotizar') {
-      const waBtn = document.getElementById('waBtn');
-      waBtn.href = `https://wa.me/${WA_NUMBER}?text=Hola%2C%20vengo%20del%20chat%20de%20su%20web%20y%20quiero%20cotizar%20un%20proyecto`;
-    }
-
-    showOptions([]);
-    await addMessage(step.msg, 'bot', 300);
-    if (step.options.length > 0) showOptions(step.options);
-  }
-
-  async function selectOption(opt) {
-    showOptions([]);
-    await addMessage(opt.label, 'user');
-    await startFlow(opt.next);
-  }
+ 
+  showOptions([]);
+  await addMessage(opt.label, 'user');
+  await startFlow(opt.next);
+}
 </script>
 
 </body>
