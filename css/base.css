@@ -754,3 +754,127 @@ section {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
+/* ============================================
+   MICRO-ANIMACIONES GLOBALES — INNOVA TEAM
+   Pega este bloque al final de tu base.css
+   ============================================ */
+
+/* ── Scroll Reveal — estado inicial ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity  0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-reveal="left"]  { transform: translateX(-24px); }
+[data-reveal="right"] { transform: translateX(24px); }
+[data-reveal="scale"] { transform: scale(0.93) translateY(12px); }
+[data-reveal="fade"]  { transform: none; }
+
+/* Estado visible */
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Respeta preferencias del usuario */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Cursor personalizado ── */
+#innova-cursor {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 999999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cursor-dot {
+  position: absolute;
+  width: 6px; height: 6px;
+  background: #00E6A8;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  position: absolute;
+  width: 28px; height: 28px;
+  border: 1.5px solid rgba(102, 126, 234, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    width  0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    height 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.3s ease,
+    background   0.3s ease;
+}
+
+#innova-cursor.is-hovering .cursor-ring {
+  width: 44px; height: 44px;
+  border-color: rgba(102, 126, 234, 0.7);
+  background: rgba(102, 126, 234, 0.06);
+}
+
+#innova-cursor.is-hovering .cursor-dot {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+/* Ocultar cursor nativo cuando el custom está activo */
+body:has(#innova-cursor) {
+  cursor: none;
+}
+body:has(#innova-cursor) a,
+body:has(#innova-cursor) button {
+  cursor: none;
+}
+
+/* ── Navbar link activo ── */
+.navbar__link.is-active {
+  color: #00E6A8 !important;
+}
+
+/* ── Hover en cards — micro-lift ── */
+.card--service {
+  transition:
+    transform   0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.3s ease,
+    box-shadow   0.3s ease !important;
+}
+
+/* ── Smooth scroll global ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Focus visible mejorado ── */
+:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Transición suave en links ── */
+a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* ── Page transition — fade in al cargar ── */
+body {
+  animation: pageLoad 0.4s ease both;
+}
+
+@keyframes pageLoad {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

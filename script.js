@@ -151,3 +151,259 @@ document.querySelectorAll('.faq__question').forEach(btn => {
     }
   });
 });
+// Modal mockup portafolio
+function openMockup(url, title, img) {
+  const modal = document.getElementById('mockupModal');
+  document.getElementById('mockupUrl').textContent = url;
+  document.getElementById('mockupExternalLink').href = url;
+  document.getElementById('mockupImg').src = img;
+  document.getElementById('mockupImg').alt = title;
+  document.getElementById('mockupTitle').textContent = title;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeMockup(e) {
+  if (e && e.target !== document.getElementById('mockupModal') && e.type === 'click') return;
+  document.getElementById('mockupModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMockup(); });
+
+<script>
+(function() {
+  const tabs   = document.querySelectorAll('.cases-tab');
+  const panels = document.querySelectorAll('.cases-panel');
+ 
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+ 
+      // Tabs
+      tabs.forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected','true');
+ 
+      // Panels
+      panels.forEach(p => p.classList.remove('is-active'));
+      const panel = document.getElementById('panel-' + target);
+      if (panel) panel.classList.add('is-active');
+    });
+  });
+})();
+</script>
+
+/* ============================================
+   1. INTERSECTION OBSERVER — Scroll Reveal
+   ============================================ */
+(function initScrollReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        // Una vez visible no vuelve a animarse
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px 0px 0px'
+  });
+ 
+  // Observa todos los elementos con data-reveal
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+})();
+ 
+/* ============================================
+   2. STAGGER AUTOMÁTICO para grids y listas
+   Detecta hijos directos y les aplica delay
+   ============================================ */
+(function initStagger() {
+  document.querySelectorAll('[data-stagger]').forEach(container => {
+    const children = container.children;
+    const delay    = parseFloat(container.dataset.stagger) || 0.1;
+ 
+    Array.from(children).forEach((child, i) => {
+      child.setAttribute('data-reveal', '');
+      child.style.transitionDelay = `${i * delay}s`;
+    });
+ 
+    // Re-observar los hijos recién marcados
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+ 
+    Array.from(children).forEach(child => observer.observe(child));
+  });
+})();
+ 
+/* ============================================
+   3. CONTADOR ANIMADO
+   Uso: <span data-counter="150" data-prefix="+" data-suffix="">0</span>
+   ============================================ */
+(function initCounters() {
+  const counters = document.querySelectorAll('[data-counter]');
+  if (!counters.length) return;
+ 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el      = entry.target;
+      const target  = parseInt(el.dataset.counter, 10);
+      const prefix  = el.dataset.prefix  || '';
+      const suffix  = el.dataset.suffix  || '';
+      const duration = 1400;
+      const start   = performance.now();
+ 
+      function update(now) {
+        const elapsed  = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased    = 1 - Math.pow(1 - progress, 3);
+        const current  = Math.floor(eased * target);
+        el.textContent = prefix + current + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = prefix + target + suffix;
+      }
+ 
+      requestAnimationFrame(update);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+ 
+  counters.forEach(el => observer.observe(el));
+})();
+ 
+/* ============================================
+   4. HOVER MAGNÉTICO en botones primarios
+   Efecto sutil que sigue el cursor
+   ============================================ */
+(function initMagneticButtons() {
+  document.querySelectorAll('.btn--primary, .service-hero__cta, .portfolio-cta__btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect   = btn.getBoundingClientRect();
+      const cx     = rect.left + rect.width  / 2;
+      const cy     = rect.top  + rect.height / 2;
+      const dx     = (e.clientX - cx) * 0.18;
+      const dy     = (e.clientY - cy) * 0.18;
+      btn.style.transform = `translate(${dx}px, ${dy}px) scale(1.03)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+})();
+ 
+/* ============================================
+   5. CURSOR PERSONALIZADO (sutil)
+   Un punto que sigue al cursor en desktop
+   ============================================ */
+(function initCursor() {
+  // Solo en desktop
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+ 
+  const cursor = document.createElement('div');
+  cursor.id    = 'innova-cursor';
+  cursor.innerHTML = '<div class="cursor-dot"></div><div class="cursor-ring"></div>';
+  document.body.appendChild(cursor);
+ 
+  let mx = 0, my = 0, cx = 0, cy = 0;
+ 
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX;
+    my = e.clientY;
+    cursor.style.opacity = '1';
+  });
+ 
+  document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+  });
+ 
+  // Hover en links y botones — agranda el ring
+  document.querySelectorAll('a, button, [data-cursor-grow]').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('is-hovering'));
+  });
+ 
+  // Smooth follow con lerp
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function loop() {
+    cx = lerp(cx, mx, 0.12);
+    cy = lerp(cy, my, 0.12);
+    cursor.style.left = cx + 'px';
+    cursor.style.top  = cy + 'px';
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+ 
+/* ============================================
+   6. PARALLAX SUAVE en glows del hero
+   Solo si el usuario no prefiere reduced motion
+   ============================================ */
+(function initParallax() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+ 
+  const glows = document.querySelectorAll('.hero__glow, .about-hero__glow, .portfolio-hero__glow, .service-hero__glow');
+  if (!glows.length) return;
+ 
+  let ticking = false;
+  window.addEventListener('mousemove', e => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const xRatio = (e.clientX / window.innerWidth  - 0.5) * 2;
+      const yRatio = (e.clientY / window.innerHeight - 0.5) * 2;
+      glows.forEach((glow, i) => {
+        const intensity = (i % 2 === 0) ? 18 : 12;
+        glow.style.transform = `translate(${xRatio * intensity}px, ${yRatio * intensity}px)`;
+      });
+      ticking = false;
+    });
+  });
+})();
+ 
+/* ============================================
+   7. ACTIVE NAV LINK según sección visible
+   Marca el link activo en la navbar al scrollear
+   ============================================ */
+(function initActiveNav() {
+  const sections = document.querySelectorAll('section[id]');
+  if (!sections.length) return;
+ 
+  const navLinks = document.querySelectorAll('.navbar__link[href^="#"], .navbar__link[href*="#"]');
+  if (!navLinks.length) return;
+ 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinks.forEach(link => {
+        const isActive = link.getAttribute('href').includes(id);
+        link.classList.toggle('is-active', isActive);
+      });
+    });
+  }, { threshold: 0.35 });
+ 
+  sections.forEach(s => observer.observe(s));
+})();
+ 
+/* ============================================
+   8. SMOOTH SCROLL para links ancla
+   ============================================ */
+(function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const id  = link.getAttribute('href').slice(1);
+      const el  = document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+})();
