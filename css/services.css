@@ -291,3 +291,112 @@
     min-width: 22px;
   }
 }
+.clients {
+  padding: 3rem 0;
+  background: #09090b;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  overflow: hidden;
+  position: relative;
+}
+ 
+.clients::before,
+.clients::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.clients::before {
+  left: 0;
+  background: linear-gradient(to right, #09090b, transparent);
+}
+.clients::after {
+  right: 0;
+  background: linear-gradient(to left, #09090b, transparent);
+}
+ 
+.clients__label {
+  text-align: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+ 
+/* Scroll infinito */
+.clients__track-wrap {
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+ 
+.clients__track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  animation: clientsScroll 28s linear infinite;
+  flex-shrink: 0;
+}
+ 
+.clients__track:hover { animation-play-state: paused; }
+ 
+@keyframes clientsScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+ 
+/* Logo individual */
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0.35;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%) brightness(2);
+  padding: 0.5rem 1rem;
+}
+ 
+.client-logo:hover {
+  opacity: 0.85;
+  filter: grayscale(0%) brightness(1);
+}
+ 
+.client-logo img {
+  height: 36px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  display: block;
+}
+ 
+/* Fallback texto si no hay imagen */
+.client-logo--text {
+  font-family: var(--font-primary, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+ 
+/* Separador decorativo entre logos */
+.client-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+ 
+@media (max-width: 768px) {
+  .clients { padding: 2rem 0; }
+  .clients__track { gap: 2rem; }
+  .client-logo img { height: 28px; }
+}
