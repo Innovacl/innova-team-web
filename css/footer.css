@@ -291,3 +291,37 @@
 .footer-column__address a:hover {
   color: var(--color-primary);
 }
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.footer-social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.06);
+
+  color: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.footer-social__link:hover {
+  transform: translateY(-3px);
+
+  background: #ffffff;
+
+  color: #111111;
+}
